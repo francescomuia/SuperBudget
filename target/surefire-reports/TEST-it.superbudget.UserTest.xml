@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.386" errors="0" skipped="0" tests="1" name="it.superbudget.UserTest">
+<testsuite failures="0" time="1.525" errors="0" skipped="0" tests="1" name="it.superbudget.UserTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_21\jre\bin"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="C:\Users\muia\workspace\programmi\SuperBudget"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_21\jre\lib\endorsed"/>
     <property name="os.arch" value="x86"/>
-    <property name="surefire.real.class.path" value="C:\Users\muia\workspace\programmi\SuperBudget\target\surefire\surefirebooter6865667891564129993.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\muia\workspace\programmi\SuperBudget\target\surefire\surefirebooter3750473894396006830.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\muia\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -32,7 +32,6 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
-    <property name="maven.repo.local" value="C:\Users\muia\.m2\repository"/>
     <property name="os.version" value="6.1"/>
     <property name="user.home" value="C:\Users\muia"/>
     <property name="user.timezone" value="Europe/Berlin"/>
@@ -60,5 +59,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0.142" classname="it.superbudget.UserTest" name="testFindAll"/>
+  <testcase time="0.146" classname="it.superbudget.UserTest" name="testFindAll"/>
 </testsuite>
