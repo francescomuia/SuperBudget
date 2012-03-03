@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>myapps</groupId>
+  <artifactId>SuperBudget</artifactId>
+  <version>0.3-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20120303.211733</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20120303211733</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.3-20120303.211733-1</value>
+        <updated>20120303211733</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.3-20120303.211733-1</value>
+        <updated>20120303211733</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
