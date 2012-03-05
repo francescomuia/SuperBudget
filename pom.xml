@@ -6,7 +6,7 @@
 	<version>0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>JPA Project</name>
-
+	<!-- Commento -->
 	<scm>
 		<connection>scm:git:git@github.com:francescomuia/SuperBudget.git</connection>
 		<url>scm:git:git@github.com:francescomuia/SuperBudget.git</url>
