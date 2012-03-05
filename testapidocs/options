@@ -15,7 +15,7 @@
 -docencoding
 'UTF-8'
 -doctitle
-'JPA Project 0.1-SNAPSHOT Test API'
+'Super Budget 0.1-SNAPSHOT Test API'
 -link
 '../apidocs'
 -link
@@ -23,4 +23,4 @@
 -use
 -version
 -windowtitle
-'JPA Project 0.1-SNAPSHOT Test API'
+'Super Budget 0.1-SNAPSHOT Test API'
