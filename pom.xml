@@ -179,8 +179,6 @@
 				<version>1.6</version>
 				<configuration>
 					<basedir>C:\Users\muia\workspace\programmi\SuperBudget</basedir>
-					<includes>*/**</includes>
-					
 				</configuration>
 			</plugin>
 		</plugins>
