@@ -1,0 +1,24 @@
+-classpath
+'c:/Users/muia/workspace/programmi/SuperBudget/target/classes;C:/Users/muia/.m2/repository/org/eclipse/persistence/eclipselink/2.0.0/eclipselink-2.0.0.jar;C:/Users/muia/.m2/repository/org/eclipse/persistence/javax.persistence/2.0.0/javax.persistence-2.0.0.jar'
+-encoding
+'Cp1252'
+-protected
+-sourcepath
+'c:/Users/muia/workspace/programmi/SuperBudget/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2012. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'c:/Users/muia/workspace/programmi/SuperBudget/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'JPA Project 0.1-SNAPSHOT API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-use
+-version
+-windowtitle
+'JPA Project 0.1-SNAPSHOT API'
