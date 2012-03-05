@@ -3,7 +3,7 @@
 <rss version="0.91">
   <channel>
     <title>JPA Project - Checkstyle report</title>
-    <link>${project.url}</link>
+    <link>https://github.com/francescomuia/SuperBudget</link>
     <description>JPA Project - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
@@ -13,9 +13,9 @@
              Warnings: 0,
              Infos: 0
       </title>
-            <link>${project.url}/checkstyle.html</link>
+            <link>https://github.com/francescomuia/SuperBudget/checkstyle.html</link>
       <description>
-        <p>Click <a href="${project.url}/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://github.com/francescomuia/SuperBudget/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,7 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#it.superbudget.User.java">it/superbudget/User.java</a>
+                  <a href="https://github.com/francescomuia/SuperBudget/checkstyle.html#it.superbudget.User.java">it/superbudget/User.java</a>
                 </td>
                 <td>
                   0
