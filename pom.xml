@@ -6,13 +6,20 @@
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Super Budget</name>
-	<url>http://francescomuia.github.com/SuperBudget/index.html</url>
+	<url>https://github.com/francescomuia/SuperBudget</url>
+	<description>Applicativo per la gestione delle spese</description>
 
 	<issueManagement>
 		<url>https://github.com/francescomuia/SuperBudget/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
-
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 	<developers>
 		<developer>
 			<id>francescomuia</id>
@@ -20,8 +27,8 @@
 			<email>francescoMuia83@gmail.com</email>
 			<roles>
 				<role>Project Manager</role>
-				<role>Architect</role>
 			</roles>
+			<url>https://github.com/francescomuia</url>
 		</developer>
 	</developers>
 
@@ -40,6 +47,38 @@
 					<reportPlugins>
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-changelog-plugin</artifactId>
+							<version>2.2</version>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-changes-plugin</artifactId>
+							<version>2.6</version>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-clover-plugin</artifactId>
+							<version>2.4</version>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-pmd-plugin</artifactId>
+							<configuration>
+								<targetJdk>1.5</targetJdk>
+								<rulesets>
+									<ruleset>/rulesets/basic.xml</ruleset>
+									<ruleset>/rulesets/controversial.xml</ruleset>
+								</rulesets>
+								<format>xml</format>
+								<linkXref>true</linkXref>
+								<sourceEncoding>utf-8</sourceEncoding>
+
+
+								<minimumTokens>100</minimumTokens>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-project-info-reports-plugin</artifactId>
 							<version>2.2</version>
 							<configuration>
@@ -55,11 +94,6 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-surefire-report-plugin</artifactId>
-							<version>2.6</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-checkstyle-plugin</artifactId>
 							<version>2.6</version>
 						</plugin>
 						<plugin>
@@ -115,7 +149,6 @@
 					<message>Creating site for ${project.version}</message>
 					<userName>francescomuia</userName>
 					<password>tiamobibi83</password>
-					<merge>true</merge>
 				</configuration>
 				<executions>
 					<execution>
@@ -137,6 +170,9 @@
 					<target>1.5</target>
 				</configuration>
 			</plugin>
+
+
+
 		</plugins>
 	</build>
 	<dependencies>

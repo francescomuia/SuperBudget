@@ -6,50 +6,61 @@ import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Transient;
 
+/**
+ * Classe di test.
+ */
 @Entity
-public class User
-{
+public class User {
+    /**
+     * Entity manager.
+     */
     @Transient
     @PersistenceContext(unitName = "SuperBudget")
     private static EntityManager entityManager;
 
+    /**
+     * id.
+     */
     @Id
     private long id;
 
+    /**
+     * name.
+     */
     private String name;
 
-    public static User find(long id)
-    {
+    /**
+     * Ricerca utente.
+     * 
+     * @param id
+     *            indentificativo
+     * @return User
+     */
+    public static User find(final long id) {
         return entityManager.find(User.class, new Long(id));
     }
 
-    public long getId()
-    {
+    public final long getId() {
         return id;
     }
 
-    public void setId(long id)
-    {
-        this.id = id;
+    public final void setId(final long newId) {
+        this.id = newId;
     }
 
-    public String getName()
-    {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
-        this.name = name;
+    public final void setName(final String newName) {
+        this.name = newName;
     }
 
-    public static EntityManager getEntityManager()
-    {
+    public static EntityManager getEntityManager() {
         return entityManager;
     }
 
-    public static void setEntityManager(EntityManager entityManager)
-    {
-        User.entityManager = entityManager;
+    public static void setEntityManager(final EntityManager em) {
+        User.entityManager = em;
     }
 }
