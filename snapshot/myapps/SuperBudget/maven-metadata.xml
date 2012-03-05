@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>myapps</groupId>
+  <artifactId>SuperBudget</artifactId>
+  <versioning>
+    <versions>
+      <version>0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20120305115811</lastUpdated>
+  </versioning>
+</metadata>

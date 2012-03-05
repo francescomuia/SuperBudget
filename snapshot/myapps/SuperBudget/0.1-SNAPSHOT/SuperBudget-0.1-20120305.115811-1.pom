@@ -7,27 +7,15 @@
 	<packaging>jar</packaging>
 	<name>Super Budget</name>
 	<url>http://francescomuia.github.com/SuperBudget/index.html</url>
-
+	
 	<issueManagement>
 		<url>https://github.com/francescomuia/SuperBudget/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
-
-	<developers>
-		<developer>
-			<id>francescomuia</id>
-			<name>Francesco Muià</name>
-			<email>francescoMuia83@gmail.com</email>
-			<roles>
-				<role>Project Manager</role>
-				<role>Architect</role>
-			</roles>
-		</developer>
-	</developers>
-
+	
 	<scm>
-		<url>https://github.com/francescomuia/SuperBudget</url>
 		<connection>scm:git:git@github.com:francescomuia/SuperBudget.git</connection>
+		<url>scm:git:git@github.com:francescomuia/SuperBudget.git</url>
 		<developerConnection>scm:git:git@github.com:francescomuia/SuperBudget.git</developerConnection>
 	</scm>
 	<build>
