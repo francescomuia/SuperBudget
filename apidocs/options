@@ -1,17 +1,17 @@
 -classpath
-'c:/Users/muia/workspace/programmi/SuperBudget/target/classes;C:/Users/muia/.m2/repository/org/eclipse/persistence/eclipselink/2.0.0/eclipselink-2.0.0.jar;C:/Users/muia/.m2/repository/org/eclipse/persistence/javax.persistence/2.0.0/javax.persistence-2.0.0.jar'
+'C:/Users/muia/workspace/programmi/superbudget/target/classes;C:/Users/muia/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar;C:/Users/muia/.m2/repository/org/apache/derby/derby/10.8.2.2/derby-10.8.2.2.jar;C:/Users/muia/.m2/repository/org/eclipse/persistence/eclipselink/2.0.0/eclipselink-2.0.0.jar;C:/Users/muia/.m2/repository/org/eclipse/persistence/javax.persistence/2.0.0/javax.persistence-2.0.0.jar'
 -encoding
 'Cp1252'
 -protected
 -sourcepath
-'c:/Users/muia/workspace/programmi/SuperBudget/src/main/java'
+'C:/Users/muia/workspace/programmi/superbudget/src/main/java'
 -author
 -bottom
 'Copyright &#169; 2012. All Rights Reserved.'
 -charset
 'UTF-8'
 -d
-'c:/Users/muia/workspace/programmi/SuperBudget/target/site/apidocs'
+'C:/Users/muia/workspace/programmi/superbudget/target/site/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
