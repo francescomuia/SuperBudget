@@ -1,0 +1,23 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="SuperBudget">
+	
+	</persistence-unit>
+	<persistence-unit name="SuperBudget-test"
+		transaction-type="RESOURCE_LOCAL">
+		<class>it.superbudget.User</class>
+		<properties>
+			<property name="eclipselink.ddl-generation.output-mode"
+				value="database" />
+			<property name="eclipselink.logging.level" value="FINE" />
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.user" value="superbudget" />
+			<property name="javax.persistence.jdbc.password" value="tegdubrepus" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:derby:./database;create=true" />
+			<property name="eclipselink.ddl-generation" value="drop-create-tables" />
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<JDepend>
+    <Packages>
+
+        <Package name="it.superbudget">
+            <Stats>
+                <TotalClasses>3</TotalClasses>
+                <ConcreteClasses>3</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>1</Ca>
+                <Ce>5</Ce>
+                <A>0</A>
+                <I>0.83</I>
+                <D>0.17</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="ShutdownHook.java">
+                    it.superbudget.ShutdownHook
+                </Class>
+                <Class sourceFile="SuperBudget.java">
+                    it.superbudget.SuperBudget
+                </Class>
+                <Class sourceFile="SuperBudget.java">
+                    it.superbudget.SuperBudget$1
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>it.superbudget.gui</Package>
+                <Package>java.io</Package>
+                <Package>java.lang</Package>
+                <Package>java.sql</Package>
+                <Package>javax.swing</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>it.superbudget.gui</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="it.superbudget.gui">
+            <Stats>
+                <TotalClasses>2</TotalClasses>
+                <ConcreteClasses>2</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>1</Ca>
+                <Ce>8</Ce>
+                <A>0</A>
+                <I>0.89</I>
+                <D>0.11</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="SplashScreen.java">
+                    it.superbudget.gui.SplashScreen
+                </Class>
+                <Class sourceFile="SplashScreen.java">
+                    it.superbudget.gui.SplashScreen$SplashScreenTask
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>it.superbudget</Package>
+                <Package>it.superbudget.persistence</Package>
+                <Package>java.awt</Package>
+                <Package>java.lang</Package>
+                <Package>java.util</Package>
+                <Package>javax.swing</Package>
+                <Package>org.apache.log4j</Package>
+                <Package>org.apache.log4j.xml</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>it.superbudget</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="it.superbudget.persistence">
+            <Stats>
+                <TotalClasses>1</TotalClasses>
+                <ConcreteClasses>1</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>1</Ca>
+                <Ce>3</Ce>
+                <A>0</A>
+                <I>0.75</I>
+                <D>0.25</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="PersistenceManager.java">
+                    it.superbudget.persistence.PersistenceManager
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>java.lang</Package>
+                <Package>javax.persistence</Package>
+                <Package>org.eclipse.persistence.jpa</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>it.superbudget.gui</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="it.superbudget.persistence.entities">
+            <Stats>
+                <TotalClasses>5</TotalClasses>
+                <ConcreteClasses>4</ConcreteClasses>
+                <AbstractClasses>1</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>4</Ce>
+                <A>0.2</A>
+                <I>1</I>
+                <D>0.2</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+                <Class sourceFile="BudgetEntry.java">
+                    it.superbudget.persistence.entities.BudgetEntry
+                </Class>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="Budget.java">
+                    it.superbudget.persistence.entities.Budget
+                </Class>
+                <Class sourceFile="Category.java">
+                    it.superbudget.persistence.entities.Category
+                </Class>
+                <Class sourceFile="Expenses.java">
+                    it.superbudget.persistence.entities.Expenses
+                </Class>
+                <Class sourceFile="Revenues.java">
+                    it.superbudget.persistence.entities.Revenues
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>java.io</Package>
+                <Package>java.lang</Package>
+                <Package>java.math</Package>
+                <Package>java.util</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="java.awt">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.io">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.lang">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.math">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.sql">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.util">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="javax.persistence">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="javax.swing">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="org.apache.log4j">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="org.apache.log4j.xml">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="org.eclipse.persistence.jpa">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+    </Packages>
+
+    <Cycles>
+        <Package Name="it.superbudget">
+            <Package>it.superbudget.gui</Package>
+            <Package>it.superbudget</Package>
+        </Package>
+
+        <Package Name="it.superbudget.gui">
+            <Package>it.superbudget</Package>
+            <Package>it.superbudget.gui</Package>
+        </Package>
+
+    </Cycles>
+</JDepend>
