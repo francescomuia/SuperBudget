@@ -6,12 +6,13 @@
 		<class>it.superbudget.persistence.entities.Budget</class>
 		<class>it.superbudget.persistence.entities.BudgetEntry</class>
 		<class>it.superbudget.persistence.entities.Category</class>
+		<class>it.superbudget.persistence.entities.SubCategory</class>
 		<class>it.superbudget.persistence.entities.Expenses</class>
 		<class>it.superbudget.persistence.entities.Revenues</class>
 		<properties>
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="database" />
-			<property name="eclipselink.logging.level" value="FINEST" />
+			<property name="eclipselink.logging.level" value="FINE" />
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
 			<property name="javax.persistence.jdbc.user" value="superbudget" />
 			<property name="javax.persistence.jdbc.password" value="tegdubrepus" />

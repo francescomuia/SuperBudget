@@ -2,6 +2,7 @@ package it.superbudget.gui;
 
 import it.superbudget.SuperBudget;
 import it.superbudget.persistence.PersistenceManager;
+import it.superbudget.util.messages.MessagesUtils;
 
 import java.awt.BorderLayout;
 import java.util.AbstractMap.SimpleEntry;
@@ -13,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
 import org.apache.log4j.Logger;
@@ -31,7 +33,7 @@ public class SplashScreen extends JDialog
 	public SplashScreen()
 	{
 		setUndecorated(true);
-		setModal(true);
+		setModal(false);
 		initializeComponents();
 		pack();
 		this.setLocationRelativeTo(null);
@@ -58,6 +60,8 @@ public class SplashScreen extends JDialog
 
 	class SplashScreenTask extends SwingWorker<Void, SimpleEntry<String, Integer>>
 	{
+		private SuperBudgetApp application;
+
 		public void enableLoggingSystem()
 		{
 			DOMConfigurator.configure(SuperBudget.class.getResource("/log4j.xml"));
@@ -75,12 +79,25 @@ public class SplashScreen extends JDialog
 		protected Void doInBackground() throws Exception
 		{
 			// First Enable logger
-			publish(new SimpleEntry<String, Integer>("Starting Logging System...", new Integer(0)));
-			this.enableLoggingSystem();
-			publish(new SimpleEntry<String, Integer>("Logging System Started", new Integer(10)));
-			publish(new SimpleEntry<String, Integer>("Starting Persistence Context...", new Integer(10)));
-			startPersistenceContext();
-			publish(new SimpleEntry<String, Integer>("Persistence Context Started", new Integer(30)));
+			try
+			{
+				publish(new SimpleEntry<String, Integer>("Starting Logging System...", new Integer(0)));
+				this.enableLoggingSystem();
+				publish(new SimpleEntry<String, Integer>("Logging System Started", new Integer(10)));
+				publish(new SimpleEntry<String, Integer>("Starting Persistence Context...", new Integer(10)));
+				startPersistenceContext();
+				publish(new SimpleEntry<String, Integer>("Persistence Context Started", new Integer(30)));
+				publish(new SimpleEntry<String, Integer>("Initialize Application", new Integer(30)));
+				application = new SuperBudgetApp();
+				publish(new SimpleEntry<String, Integer>("Application Initialized", new Integer(100)));
+			}
+			catch (Exception e)
+			{
+				Logger logger = Logger.getLogger(SplashScreen.class);
+				logger.error(e);
+				MessagesUtils.showExceptionMessage(e);
+				throw e;
+			}
 			return null;
 		}
 
@@ -99,8 +116,24 @@ public class SplashScreen extends JDialog
 		{
 			super.done();
 			dispose();
-		}
+			if (application != null)
+			{
+				SwingUtilities.invokeLater(new Runnable()
+				{
 
+					public void run()
+					{
+
+						application.display();
+					}
+				});
+			}
+			else
+			{
+				System.exit(-1);
+			}
+
+		}
 	}
 
 	public JProgressBar getProgressBar()
@@ -113,19 +146,8 @@ public class SplashScreen extends JDialog
 		return lblProgress;
 	}
 
-	@Override
-	public void setVisible(boolean b)
+	public void start()
 	{
-		if (b)
-		{
-			if (!(worker.isDone() || worker.isCancelled()))
-			{
-				worker.cancel(true);
-				initializeComponents();
-			}
-			worker = new SplashScreenTask();
-			worker.execute();
-		}
-		super.setVisible(b);
+		worker.execute();
 	}
 }

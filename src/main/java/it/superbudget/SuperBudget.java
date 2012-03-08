@@ -25,7 +25,10 @@ public class SuperBudget
 			{
 				SplashScreen splashScreen = new SplashScreen();
 				splashScreen.setVisible(true);
+				splashScreen.start();
+
 			}
 		});
+
 	}
 }

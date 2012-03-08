@@ -1,11 +1,13 @@
 package it.superbudget.persistence.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category implements Serializable
@@ -17,6 +19,9 @@ public class Category implements Serializable
 	private Long categoryId;
 
 	private String name;
+
+	@OneToMany(mappedBy = "category")
+	private List<SubCategory> subCategories;
 
 	public Long getCategoryId()
 	{
@@ -65,5 +70,15 @@ public class Category implements Serializable
 		else if (!categoryId.equals(other.categoryId))
 			return false;
 		return true;
+	}
+
+	public List<SubCategory> getSubCategories()
+	{
+		return subCategories;
+	}
+
+	public void setSubCategories(List<SubCategory> subCategories)
+	{
+		this.subCategories = subCategories;
 	}
 }
