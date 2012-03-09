@@ -51,6 +51,10 @@ public abstract class BudgetEntry implements Serializable
 	@ManyToOne
 	private Budget budget;
 
+	private boolean recursive;
+
+	private Occurs occurs;
+
 	public Long getBudgetEntryId()
 	{
 		return budgetEntryId;

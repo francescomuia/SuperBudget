@@ -9,6 +9,7 @@
 		<class>it.superbudget.persistence.entities.SubCategory</class>
 		<class>it.superbudget.persistence.entities.Expenses</class>
 		<class>it.superbudget.persistence.entities.Revenues</class>
+		<class>it.superbudget.persistence.entities.Occurs</class>
 		<properties>
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="database" />

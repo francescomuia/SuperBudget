@@ -16,7 +16,6 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -268,12 +267,6 @@ public class BudgetPanel extends JPanel
 		panel.add(panel_2);
 
 		JToolBar toolBar = new JToolBar();
-		Enumeration<Object> tests = UIManager.getLookAndFeelDefaults().elements();
-		while (tests.hasMoreElements())
-		{
-			Object object = (Object) tests.nextElement();
-			System.out.println(object);
-		}
 		add(toolBar, BorderLayout.NORTH);
 
 		JButton btnNewButton = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_NUOVA_ENTRATA), new ImageIcon(

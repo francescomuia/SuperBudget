@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.031" errors="0" skipped="0" tests="2" name="it.superbudget.ResourcesBundlesUtilTest">
+<testsuite failures="0" time="0.017" errors="0" skipped="0" tests="2" name="it.superbudget.ResourcesBundlesUtilTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_21\jre\bin"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="C:\Users\muia\workspace\programmi\superbudget"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_21\jre\lib\endorsed"/>
     <property name="os.arch" value="x86"/>
-    <property name="surefire.real.class.path" value="C:\Users\muia\workspace\programmi\superbudget\target\surefire\surefirebooter7009117158922233806.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\muia\workspace\programmi\superbudget\target\surefire\surefirebooter7398260545056927667.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\muia\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -59,6 +59,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0" classname="it.superbudget.ResourcesBundlesUtilTest" name="testGetLabelsBundles"/>
+  <testcase time="0.005" classname="it.superbudget.ResourcesBundlesUtilTest" name="testGetLabelsBundles"/>
   <testcase time="0" classname="it.superbudget.ResourcesBundlesUtilTest" name="testGetApplicationVersion"/>
 </testsuite>

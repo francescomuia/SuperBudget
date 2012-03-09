@@ -2,12 +2,16 @@ package it.superbudget.gui;
 
 import it.superbudget.SuperBudget;
 import it.superbudget.persistence.PersistenceManager;
+import it.superbudget.util.db.DbUnitDataLoader;
 import it.superbudget.util.messages.MessagesUtils;
 
 import java.awt.BorderLayout;
+import java.io.InputStream;
+import java.sql.Connection;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -74,6 +78,26 @@ public class SplashScreen extends JDialog
 			PersistenceManager.getInstance().getEntityManager();
 		}
 
+		public void anagraficsCheck()
+		{
+			InputStream stream = SplashScreen.class.getResourceAsStream("/db/occurs.db.xml");
+			EntityManager em = PersistenceManager.getInstance().getEntityManager();
+			Connection connection = PersistenceManager.getInstance().getEntityManager().unwrap(Connection.class);
+			DbUnitDataLoader loader = new DbUnitDataLoader(stream, connection);
+			try
+			{
+				em.getTransaction().begin();
+				loader.populateTestData();
+				connection.commit();
+				em.getTransaction().commit();
+			}
+			catch (Exception e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
 		@SuppressWarnings("unchecked")
 		@Override
 		protected Void doInBackground() throws Exception
@@ -87,7 +111,10 @@ public class SplashScreen extends JDialog
 				publish(new SimpleEntry<String, Integer>("Starting Persistence Context...", new Integer(10)));
 				startPersistenceContext();
 				publish(new SimpleEntry<String, Integer>("Persistence Context Started", new Integer(30)));
-				publish(new SimpleEntry<String, Integer>("Initialize Application", new Integer(30)));
+				publish(new SimpleEntry<String, Integer>("Initialize Anagrafics", new Integer(30)));
+				this.anagraficsCheck();
+				publish(new SimpleEntry<String, Integer>("Anagrafics Created", new Integer(50)));
+				publish(new SimpleEntry<String, Integer>("Initialize Application", new Integer(50)));
 				application = new SuperBudgetApp();
 				publish(new SimpleEntry<String, Integer>("Application Initialized", new Integer(100)));
 			}

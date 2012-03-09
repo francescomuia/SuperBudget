@@ -4,6 +4,7 @@ it.superbudget.persistence
 it.superbudget.persistence.dao
 it.superbudget.persistence.entities
 it.superbudget.util.bundles
+it.superbudget.util.db
 it.superbudget.util.dialog
 it.superbudget.util.fonts
 it.superbudget.util.icons

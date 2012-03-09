@@ -1,153 +1,478 @@
 ----------------------------------------------------------------
-Thu Mar 08 20:16:37 CET 2012:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.7.1.1 - (1040133): instance a816c00e-0135-f3bd-cdb0-000000b6ee50 
+Thu Mar 08 20:46:59 CET 2012:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.7.1.1 - (1040133): instance a816c00e-0135-f3d9-9bcb-000000bfb8c8 
 on database directory C:\Users\muia\workspace\programmi\superbudget\database  with class loader sun.misc.Launcher$AppClassLoader@11b86e7 
 Loaded from file:/C:/Users/muia/.m2/repository/org/apache/derby/derby/10.7.1.1/derby-10.7.1.1.jar
 java.vendor=Sun Microsystems Inc.
 java.runtime.version=1.6.0_21-b07
 Database Class Loader started - derby.database.classpath=''
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7217), (SESSIONID = 0), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7217), (SESSIONID = 0), (DATABASE = ./database), (DRDAID = null), Rolling back
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7218), (SESSIONID = 1), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7218), (SESSIONID = 1), (DATABASE = ./database), (DRDAID = null), Rolling back
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7219), (SESSIONID = 2), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7219), (SESSIONID = 2), (DATABASE = ./database), (DRDAID = null), Rolling back
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7220), (SESSIONID = 3), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7221), (SESSIONID = 4), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7221), (SESSIONID = 4), (DATABASE = ./database), (DRDAID = null), Rolling back
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7222), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7223), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGSBCTGRYSBCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7223), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGSBCTGRYSBCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7223), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGSBCTGRYSBCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7223), (SESSIONID = 5), ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGSBCTGRYSBCTGRYD ******* null
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7223), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7226), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRCTGRYCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7226), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRCTGRYCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7226), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRCTGRYCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7226), (SESSIONID = 5), ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRCTGRYCTGRYD ******* null
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7226), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7229), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYBDGTBDGDID :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7229), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYBDGTBDGDID :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7229), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYBDGTBDGDID :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7229), (SESSIONID = 5), ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYBDGTBDGDID ******* null
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7229), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7232), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE SUBCATEGORY DROP CONSTRAINT SBCTGRYCTGRYCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7232), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE SUBCATEGORY DROP CONSTRAINT SBCTGRYCTGRYCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7232), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE SUBCATEGORY DROP CONSTRAINT SBCTGRYCTGRYCTGRYD :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7232), (SESSIONID = 5), ALTER TABLE SUBCATEGORY DROP CONSTRAINT SBCTGRYCTGRYCTGRYD ******* null
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7232), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7240), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE BUDGET :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7240), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE BUDGET :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7240), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE BUDGET :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7240), (SESSIONID = 5), DROP TABLE BUDGET ******* null
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7240), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7244), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE BUDGET (BUDGEDID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), SALDO DECIMAL(15), DEFAULTBUDGET SMALLINT DEFAULT 0, PRIMARY KEY (BUDGEDID)) :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7244), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE BUDGET (BUDGEDID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), SALDO DECIMAL(15), DEFAULTBUDGET SMALLINT DEFAULT 0, PRIMARY KEY (BUDGEDID)) :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7244), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE BUDGET (BUDGEDID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), SALDO DECIMAL(15), DEFAULTBUDGET SMALLINT DEFAULT 0, PRIMARY KEY (BUDGEDID)) :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7244), (SESSIONID = 5), CREATE TABLE BUDGET (BUDGEDID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), SALDO DECIMAL(15), DEFAULTBUDGET SMALLINT DEFAULT 0, PRIMARY KEY (BUDGEDID)) ******* null
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7244), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7253), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE BUDGETENTRY :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7253), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE BUDGETENTRY :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7253), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE BUDGETENTRY :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7253), (SESSIONID = 5), DROP TABLE BUDGETENTRY ******* null
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7253), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7257), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE BUDGETENTRY (BUDGETENTRYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, TYPE VARCHAR(31), VALUE DECIMAL(15), DATE DATE, BUDGET_BUDGEDID BIGINT, SUBCATEGORY_SUBCATEGORYID BIGINT, CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (BUDGETENTRYID)) :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7257), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE BUDGETENTRY (BUDGETENTRYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, TYPE VARCHAR(31), VALUE DECIMAL(15), DATE DATE, BUDGET_BUDGEDID BIGINT, SUBCATEGORY_SUBCATEGORYID BIGINT, CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (BUDGETENTRYID)) :End prepared statement
-Thu Mar 08 20:16:37 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7257), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE BUDGETENTRY (BUDGETENTRYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, TYPE VARCHAR(31), VALUE DECIMAL(15), DATE DATE, BUDGET_BUDGEDID BIGINT, SUBCATEGORY_SUBCATEGORYID BIGINT, CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (BUDGETENTRYID)) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7257), (SESSIONID = 5), CREATE TABLE BUDGETENTRY (BUDGETENTRYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, TYPE VARCHAR(31), VALUE DECIMAL(15), DATE DATE, BUDGET_BUDGEDID BIGINT, SUBCATEGORY_SUBCATEGORYID BIGINT, CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (BUDGETENTRYID)) ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7257), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7262), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE CATEGORY :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7262), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE CATEGORY :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7262), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE CATEGORY :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7262), (SESSIONID = 5), DROP TABLE CATEGORY ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7262), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7266), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE CATEGORY (CATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (CATEGORYID)) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7266), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE CATEGORY (CATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (CATEGORYID)) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7266), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE CATEGORY (CATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (CATEGORYID)) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7266), (SESSIONID = 5), CREATE TABLE CATEGORY (CATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (CATEGORYID)) ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7266), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7272), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE SUBCATEGORY :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7272), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE SUBCATEGORY :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7272), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE SUBCATEGORY :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7272), (SESSIONID = 5), DROP TABLE SUBCATEGORY ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7272), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7280), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE SUBCATEGORY (SUBCATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (SUBCATEGORYID)) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7280), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE SUBCATEGORY (SUBCATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (SUBCATEGORYID)) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7280), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE SUBCATEGORY (SUBCATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (SUBCATEGORYID)) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7280), (SESSIONID = 5), CREATE TABLE SUBCATEGORY (SUBCATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (SUBCATEGORYID)) ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7280), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7285), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGSBCTGRYSBCTGRYD FOREIGN KEY (SUBCATEGORY_SUBCATEGORYID) REFERENCES SUBCATEGORY (SUBCATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7285), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGSBCTGRYSBCTGRYD FOREIGN KEY (SUBCATEGORY_SUBCATEGORYID) REFERENCES SUBCATEGORY (SUBCATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7285), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGSBCTGRYSBCTGRYD FOREIGN KEY (SUBCATEGORY_SUBCATEGORYID) REFERENCES SUBCATEGORY (SUBCATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7285), (SESSIONID = 5), ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGSBCTGRYSBCTGRYD FOREIGN KEY (SUBCATEGORY_SUBCATEGORYID) REFERENCES SUBCATEGORY (SUBCATEGORYID) ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7285), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7290), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7290), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7290), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7290), (SESSIONID = 5), ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7290), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7294), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYBDGTBDGDID FOREIGN KEY (BUDGET_BUDGEDID) REFERENCES BUDGET (BUDGEDID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7294), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYBDGTBDGDID FOREIGN KEY (BUDGET_BUDGEDID) REFERENCES BUDGET (BUDGEDID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7294), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYBDGTBDGDID FOREIGN KEY (BUDGET_BUDGEDID) REFERENCES BUDGET (BUDGEDID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7294), (SESSIONID = 5), ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYBDGTBDGDID FOREIGN KEY (BUDGET_BUDGEDID) REFERENCES BUDGET (BUDGEDID) ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7294), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7297), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE SUBCATEGORY ADD CONSTRAINT SBCTGRYCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7297), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE SUBCATEGORY ADD CONSTRAINT SBCTGRYCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7297), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE SUBCATEGORY ADD CONSTRAINT SBCTGRYCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7297), (SESSIONID = 5), ALTER TABLE SUBCATEGORY ADD CONSTRAINT SBCTGRYCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) ******* null
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7297), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7300), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7300), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7300), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET :End prepared statement
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7300), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7300), (SESSIONID = 5), SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET ******* Table Scan ResultSet for BUDGET at read committed isolation level using instantaneous share row locking chosen by the optimizer
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8220), (SESSIONID = 0), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8220), (SESSIONID = 0), (DATABASE = ./database), (DRDAID = null), Rolling back
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8221), (SESSIONID = 1), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8221), (SESSIONID = 1), (DATABASE = ./database), (DRDAID = null), Rolling back
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8222), (SESSIONID = 2), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8222), (SESSIONID = 2), (DATABASE = ./database), (DRDAID = null), Rolling back
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8223), (SESSIONID = 3), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8224), (SESSIONID = 4), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8224), (SESSIONID = 4), (DATABASE = ./database), (DRDAID = null), Rolling back
+Thu Mar 08 20:46:59 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8225), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8226), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGSBCTGRYSBCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8226), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGSBCTGRYSBCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8226), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGSBCTGRYSBCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8226), (SESSIONID = 5), ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGSBCTGRYSBCTGRYD ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8226), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8229), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYCCRSCCRSID :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8229), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYCCRSCCRSID :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8229), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYCCRSCCRSID :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8229), (SESSIONID = 5), ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYCCRSCCRSID ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8229), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8232), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRCTGRYCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8232), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRCTGRYCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8232), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRCTGRYCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8232), (SESSIONID = 5), ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRCTGRYCTGRYD ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8232), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8235), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYBDGTBDGDID :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8235), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYBDGTBDGDID :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8235), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYBDGTBDGDID :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8235), (SESSIONID = 5), ALTER TABLE BUDGETENTRY DROP CONSTRAINT BDGTNTRYBDGTBDGDID ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8235), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8238), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE SUBCATEGORY DROP CONSTRAINT SBCTGRYCTGRYCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8238), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE SUBCATEGORY DROP CONSTRAINT SBCTGRYCTGRYCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8238), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE SUBCATEGORY DROP CONSTRAINT SBCTGRYCTGRYCTGRYD :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8238), (SESSIONID = 5), ALTER TABLE SUBCATEGORY DROP CONSTRAINT SBCTGRYCTGRYCTGRYD ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8238), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8246), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE BUDGET :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8246), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE BUDGET :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8246), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE BUDGET :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8246), (SESSIONID = 5), DROP TABLE BUDGET ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8246), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8250), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE BUDGET (BUDGEDID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), SALDO DECIMAL(15), DEFAULTBUDGET SMALLINT DEFAULT 0, PRIMARY KEY (BUDGEDID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8250), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE BUDGET (BUDGEDID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), SALDO DECIMAL(15), DEFAULTBUDGET SMALLINT DEFAULT 0, PRIMARY KEY (BUDGEDID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8250), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE BUDGET (BUDGEDID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), SALDO DECIMAL(15), DEFAULTBUDGET SMALLINT DEFAULT 0, PRIMARY KEY (BUDGEDID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8250), (SESSIONID = 5), CREATE TABLE BUDGET (BUDGEDID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), SALDO DECIMAL(15), DEFAULTBUDGET SMALLINT DEFAULT 0, PRIMARY KEY (BUDGEDID)) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8250), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8257), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE BUDGETENTRY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8257), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE BUDGETENTRY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8257), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE BUDGETENTRY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8257), (SESSIONID = 5), DROP TABLE BUDGETENTRY ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8257), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8261), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE BUDGETENTRY (BUDGETENTRYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, TYPE VARCHAR(31), RECURSIVE SMALLINT DEFAULT 0, VALUE DECIMAL(15), DATE DATE, BUDGET_BUDGEDID BIGINT, CATEGORY_CATEGORYID BIGINT, OCCURS_OCCURSID BIGINT, SUBCATEGORY_SUBCATEGORYID BIGINT, PRIMARY KEY (BUDGETENTRYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8261), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE BUDGETENTRY (BUDGETENTRYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, TYPE VARCHAR(31), RECURSIVE SMALLINT DEFAULT 0, VALUE DECIMAL(15), DATE DATE, BUDGET_BUDGEDID BIGINT, CATEGORY_CATEGORYID BIGINT, OCCURS_OCCURSID BIGINT, SUBCATEGORY_SUBCATEGORYID BIGINT, PRIMARY KEY (BUDGETENTRYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8261), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE BUDGETENTRY (BUDGETENTRYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, TYPE VARCHAR(31), RECURSIVE SMALLINT DEFAULT 0, VALUE DECIMAL(15), DATE DATE, BUDGET_BUDGEDID BIGINT, CATEGORY_CATEGORYID BIGINT, OCCURS_OCCURSID BIGINT, SUBCATEGORY_SUBCATEGORYID BIGINT, PRIMARY KEY (BUDGETENTRYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8261), (SESSIONID = 5), CREATE TABLE BUDGETENTRY (BUDGETENTRYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, TYPE VARCHAR(31), RECURSIVE SMALLINT DEFAULT 0, VALUE DECIMAL(15), DATE DATE, BUDGET_BUDGEDID BIGINT, CATEGORY_CATEGORYID BIGINT, OCCURS_OCCURSID BIGINT, SUBCATEGORY_SUBCATEGORYID BIGINT, PRIMARY KEY (BUDGETENTRYID)) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8261), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8267), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE CATEGORY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8267), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE CATEGORY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8267), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE CATEGORY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8267), (SESSIONID = 5), DROP TABLE CATEGORY ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8267), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8271), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE CATEGORY (CATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (CATEGORYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8271), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE CATEGORY (CATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (CATEGORYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8271), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE CATEGORY (CATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (CATEGORYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8271), (SESSIONID = 5), CREATE TABLE CATEGORY (CATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (CATEGORYID)) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8271), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8275), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE SUBCATEGORY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8275), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE SUBCATEGORY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8275), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE SUBCATEGORY :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8275), (SESSIONID = 5), DROP TABLE SUBCATEGORY ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8275), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8279), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE SUBCATEGORY (SUBCATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (SUBCATEGORYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8279), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE SUBCATEGORY (SUBCATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (SUBCATEGORYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8279), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE SUBCATEGORY (SUBCATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (SUBCATEGORYID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8279), (SESSIONID = 5), CREATE TABLE SUBCATEGORY (SUBCATEGORYID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), CATEGORY_CATEGORYID BIGINT, PRIMARY KEY (SUBCATEGORYID)) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8279), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8284), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: DROP TABLE OCCURS :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8284), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: DROP TABLE OCCURS :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8284), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: DROP TABLE OCCURS :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8284), (SESSIONID = 5), DROP TABLE OCCURS ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8284), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8292), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: CREATE TABLE OCCURS (OCCURSID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (OCCURSID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8292), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: CREATE TABLE OCCURS (OCCURSID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (OCCURSID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8292), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: CREATE TABLE OCCURS (OCCURSID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (OCCURSID)) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8292), (SESSIONID = 5), CREATE TABLE OCCURS (OCCURSID BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (OCCURSID)) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8292), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8296), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGSBCTGRYSBCTGRYD FOREIGN KEY (SUBCATEGORY_SUBCATEGORYID) REFERENCES SUBCATEGORY (SUBCATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8296), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGSBCTGRYSBCTGRYD FOREIGN KEY (SUBCATEGORY_SUBCATEGORYID) REFERENCES SUBCATEGORY (SUBCATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8296), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGSBCTGRYSBCTGRYD FOREIGN KEY (SUBCATEGORY_SUBCATEGORYID) REFERENCES SUBCATEGORY (SUBCATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8296), (SESSIONID = 5), ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGSBCTGRYSBCTGRYD FOREIGN KEY (SUBCATEGORY_SUBCATEGORYID) REFERENCES SUBCATEGORY (SUBCATEGORYID) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8296), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8299), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYCCRSCCRSID FOREIGN KEY (OCCURS_OCCURSID) REFERENCES OCCURS (OCCURSID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8299), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYCCRSCCRSID FOREIGN KEY (OCCURS_OCCURSID) REFERENCES OCCURS (OCCURSID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8299), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYCCRSCCRSID FOREIGN KEY (OCCURS_OCCURSID) REFERENCES OCCURS (OCCURSID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8299), (SESSIONID = 5), ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYCCRSCCRSID FOREIGN KEY (OCCURS_OCCURSID) REFERENCES OCCURS (OCCURSID) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8299), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8302), (SESSIONID = 5), ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8305), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYBDGTBDGDID FOREIGN KEY (BUDGET_BUDGEDID) REFERENCES BUDGET (BUDGEDID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8305), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYBDGTBDGDID FOREIGN KEY (BUDGET_BUDGEDID) REFERENCES BUDGET (BUDGEDID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8305), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYBDGTBDGDID FOREIGN KEY (BUDGET_BUDGEDID) REFERENCES BUDGET (BUDGEDID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8305), (SESSIONID = 5), ALTER TABLE BUDGETENTRY ADD CONSTRAINT BDGTNTRYBDGTBDGDID FOREIGN KEY (BUDGET_BUDGEDID) REFERENCES BUDGET (BUDGEDID) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8305), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: ALTER TABLE SUBCATEGORY ADD CONSTRAINT SBCTGRYCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: ALTER TABLE SUBCATEGORY ADD CONSTRAINT SBCTGRYCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: ALTER TABLE SUBCATEGORY ADD CONSTRAINT SBCTGRYCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) :End prepared statement
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8308), (SESSIONID = 5), ALTER TABLE SUBCATEGORY ADD CONSTRAINT SBCTGRYCTGRYCTGRYD FOREIGN KEY (CATEGORY_CATEGORYID) REFERENCES CATEGORY (CATEGORYID) ******* null
+Thu Mar 08 20:47:00 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: EXECUTE STATEMENT SYS."getTables" :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: EXECUTE STATEMENT SYS."getTables" :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: EXECUTE STATEMENT SYS."getTables" :End prepared statement with 7 parameters begin parameter #1: % :end parameter begin parameter #2: % :end parameter begin parameter #3: % :end parameter begin parameter #4: T :end parameter begin parameter #5: NULL :end parameter begin parameter #6: NULL :end parameter begin parameter #7: NULL :end parameter 
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), EXECUTE STATEMENT SYS."getTables" ******* Sort ResultSet:
 Number of opens = 1
-Rows seen = 0
-Rows filtered = 0
-Fetch Size = 16
+Rows input = 5
+Rows returned = 5
+Eliminate duplicates = false
+In sorted order = false
+Sort information: 
+	Number of rows input=5
+	Number of rows output=5
+	Sort type=internal
 	constructor time (milliseconds) = 0
 	open time (milliseconds) = 0
 	next time (milliseconds) = 0
 	close time (milliseconds) = 0
+	optimizer estimated row count:            0,31
+	optimizer estimated cost:           24,84
 
-scan information:
-	Bit set of columns fetched=All
-	Number of columns fetched=4
-	Number of pages visited=1
-	Number of rows qualified=0
-	Number of rows visited=0
-	Scan type=heap
-	start position:
-		null
-	stop position:
-		null
-	qualifiers:
-		None
-	optimizer estimated row count:            6,00
-	optimizer estimated cost:          100,40
-
-Thu Mar 08 20:16:38 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 7300), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7300), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: UPDATE Budget set DEFAULTBUDGET = 0 WHERE DEFAULTBUDGET=1 :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: UPDATE Budget set DEFAULTBUDGET = 0 WHERE DEFAULTBUDGET=1 :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: UPDATE Budget set DEFAULTBUDGET = 0 WHERE DEFAULTBUDGET=1 :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), UPDATE Budget set DEFAULTBUDGET = 0 WHERE DEFAULTBUDGET=1 ******* Update ResultSet using row locking:
-deferred: false
-Rows updated = 0
-Indexes updated = 0
-Execute Time = 0
-	Normalize ResultSet:
+Source result set:
+	Project-Restrict ResultSet (20):
 	Number of opens = 1
-	Rows seen = 0
+	Rows seen = 5
+	Rows filtered = 0
+	restriction = false
+	projection = true
 		constructor time (milliseconds) = 0
 		open time (milliseconds) = 0
 		next time (milliseconds) = 0
 		close time (milliseconds) = 0
-		optimizer estimated row count:            0,60
-		optimizer estimated cost:          100,40
+		restriction time (milliseconds) = 0
+		projection time (milliseconds) = 0
+		optimizer estimated row count:            0,31
+		optimizer estimated cost:           24,84
 
 	Source result set:
-		Project-Restrict ResultSet (2):
+		Nested Loop Join ResultSet:
+		Number of opens = 1
+		Rows seen from the left = 5
+		Rows seen from the right = 5
+		Rows filtered = 0
+		Rows returned = 5
+			constructor time (milliseconds) = 0
+			open time (milliseconds) = 0
+			next time (milliseconds) = 0
+			close time (milliseconds) = 0
+			optimizer estimated row count:            0,31
+			optimizer estimated cost:           24,84
+
+		Left result set:
+			Nested Loop Exists Join ResultSet:
+			Number of opens = 1
+			Rows seen from the left = 5
+			Rows seen from the right = 5
+			Rows filtered = 0
+			Rows returned = 5
+				constructor time (milliseconds) = 0
+				open time (milliseconds) = 0
+				next time (milliseconds) = 0
+				close time (milliseconds) = 0
+				optimizer estimated row count:            0,08
+				optimizer estimated cost:           24,84
+
+			Left result set:
+				Project-Restrict ResultSet (5):
+				Number of opens = 1
+				Rows seen = 27
+				Rows filtered = 22
+				restriction = true
+				projection = true
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					restriction time (milliseconds) = 0
+					projection time (milliseconds) = 0
+					optimizer estimated row count:            0,08
+					optimizer estimated cost:           24,50
+
+				Source result set:
+					Index Row to Base Row ResultSet for SYSTABLES:
+					Number of opens = 1
+					Rows seen = 27
+					Columns accessed from heap = {1, 2, 3}
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,08
+						optimizer estimated cost:           24,50
+
+						Index Scan ResultSet for SYSTABLES using index SYSTABLES_INDEX1 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+						Number of opens = 1
+						Rows seen = 27
+						Rows filtered = 0
+						Fetch Size = 16
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							next time in milliseconds/row = 0
+
+						scan information:
+							Bit set of columns fetched={0, 2}
+							Number of columns fetched=2
+							Number of deleted rows visited=1
+							Number of pages visited=1
+							Number of rows qualified=27
+							Number of rows visited=28
+							Scan type=btree
+							Tree height=1
+							start position:
+								>= on first 1 column(s).
+								Ordered null semantics on the following columns: 
+							stop position:
+								>= on first 1 column(s).
+								Ordered null semantics on the following columns: 
+							qualifiers:
+								None
+							optimizer estimated row count:            0,08
+							optimizer estimated cost:           24,50
+
+
+			Right result set:
+				Project-Restrict ResultSet (8):
+				Number of opens = 5
+				Rows seen = 5
+				Rows filtered = 0
+				restriction = true
+				projection = true
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					restriction time (milliseconds) = 0
+					projection time (milliseconds) = 0
+					optimizer estimated row count:            0,08
+					optimizer estimated cost:            0,34
+
+				Source result set:
+					Index Row to Base Row ResultSet for SYSSCHEMAS:
+					Number of opens = 5
+					Rows seen = 5
+					Columns accessed from heap = {1}
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,08
+						optimizer estimated cost:            0,34
+
+						Index Scan ResultSet for SYSSCHEMAS using index SYSSCHEMAS_INDEX2 at read committed isolation level using share row locking chosen by the optimizer
+						Number of opens = 5
+						Rows seen = 5
+						Rows filtered = 0
+						Fetch Size = 1
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							next time in milliseconds/row = 0
+
+						scan information:
+							Bit set of columns fetched=All
+							Number of columns fetched=2
+							Number of deleted rows visited=0
+							Number of pages visited=5
+							Number of rows qualified=5
+							Number of rows visited=5
+							Scan type=btree
+							Tree height=1
+							start position:
+								>= on first 1 column(s).
+								Ordered null semantics on the following columns: 
+								0 
+							stop position:
+								> on first 1 column(s).
+								Ordered null semantics on the following columns: 
+								0 
+							qualifiers:
+								None
+							optimizer estimated row count:            0,08
+							optimizer estimated cost:            0,34
+
+
+
+		Right result set:
+			Project-Restrict ResultSet (19):
+			Number of opens = 5
+			Rows seen = 20
+			Rows filtered = 15
+			restriction = true
+			projection = false
+				constructor time (milliseconds) = 0
+				open time (milliseconds) = 0
+				next time (milliseconds) = 0
+				close time (milliseconds) = 0
+				restriction time (milliseconds) = 0
+				projection time (milliseconds) = 0
+				optimizer estimated row count:            0,31
+				optimizer estimated cost:            0,00
+
+			Source result set:
+				Union ResultSet:
+				Number of opens = 5
+				Rows seen from the left = 15
+				Rows seen from the right = 5
+				Rows returned = 20
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					optimizer estimated row count:            0,31
+					optimizer estimated cost:            0,00
+
+				Left result set:
+					Union ResultSet:
+					Number of opens = 5
+					Rows seen from the left = 10
+					Rows seen from the right = 5
+					Rows returned = 15
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,23
+						optimizer estimated cost:            0,00
+
+					Left result set:
+						Union ResultSet:
+						Number of opens = 5
+						Rows seen from the left = 5
+						Rows seen from the right = 5
+						Rows returned = 10
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							optimizer estimated row count:            0,16
+							optimizer estimated cost:            0,00
+
+						Left result set:
+							Normalize ResultSet:
+							Number of opens = 5
+							Rows seen = 5
+								constructor time (milliseconds) = 0
+								open time (milliseconds) = 0
+								next time (milliseconds) = 0
+								close time (milliseconds) = 0
+								optimizer estimated row count:            0,16
+								optimizer estimated cost:            0,00
+
+							Source result set:
+								Row ResultSet:
+								Number of opens = 5
+								Rows returned = 5
+									constructor time (milliseconds) = 0
+									open time (milliseconds) = 0
+									next time (milliseconds) = 0
+									close time (milliseconds) = 0
+									optimizer estimated row count:            0,08
+									optimizer estimated cost:            0,00
+
+
+
+						Right result set:
+							Row ResultSet:
+							Number of opens = 5
+							Rows returned = 5
+								constructor time (milliseconds) = 0
+								open time (milliseconds) = 0
+								next time (milliseconds) = 0
+								close time (milliseconds) = 0
+								optimizer estimated row count:            0,08
+								optimizer estimated cost:            0,00
+
+
+
+					Right result set:
+						Normalize ResultSet:
+						Number of opens = 5
+						Rows seen = 5
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							optimizer estimated row count:            0,23
+							optimizer estimated cost:            0,00
+
+						Source result set:
+							Row ResultSet:
+							Number of opens = 5
+							Rows returned = 5
+								constructor time (milliseconds) = 0
+								open time (milliseconds) = 0
+								next time (milliseconds) = 0
+								close time (milliseconds) = 0
+								optimizer estimated row count:            0,08
+								optimizer estimated cost:            0,00
+
+
+
+
+				Right result set:
+					Normalize ResultSet:
+					Number of opens = 5
+					Rows seen = 5
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,31
+						optimizer estimated cost:            0,00
+
+					Source result set:
+						Row ResultSet:
+						Number of opens = 5
+						Rows returned = 5
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							optimizer estimated row count:            0,08
+							optimizer estimated cost:            0,00
+
+
+
+
+
+
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: delete from OCCURS :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: delete from OCCURS :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: delete from OCCURS :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), delete from OCCURS ******* Delete ResultSet using row locking:
+deferred: false
+Rows deleted = 0
+Indexes updated = 1
+Execute Time = 0
+	Project-Restrict ResultSet (2):
+	Number of opens = 1
+	Rows seen = 0
+	Rows filtered = 0
+	restriction = false
+	projection = true
+		constructor time (milliseconds) = 0
+		open time (milliseconds) = 0
+		next time (milliseconds) = 0
+		close time (milliseconds) = 0
+		restriction time (milliseconds) = 0
+		projection time (milliseconds) = 0
+		optimizer estimated row count:            6,00
+		optimizer estimated cost:           20,04
+
+	Source result set:
+		Project-Restrict ResultSet (1):
 		Number of opens = 1
 		Rows seen = 0
 		Rows filtered = 0
@@ -159,11 +484,11 @@ Execute Time = 0
 			close time (milliseconds) = 0
 			restriction time (milliseconds) = 0
 			projection time (milliseconds) = 0
-			optimizer estimated row count:            0,60
-			optimizer estimated cost:          100,40
+			optimizer estimated row count:            6,00
+			optimizer estimated cost:           20,04
 
 		Source result set:
-			Table Scan ResultSet for BUDGET at read committed isolation level using exclusive row locking chosen by the optimizer
+			Index Scan ResultSet for OCCURS using constraint SQL120308204700780 at read committed isolation level using exclusive row locking chosen by the optimizer
 			Number of opens = 1
 			Rows seen = 0
 			Rows filtered = 0
@@ -174,30 +499,756 @@ Execute Time = 0
 				close time (milliseconds) = 0
 
 			scan information:
-				Bit set of columns fetched={3}
-				Number of columns fetched=1
+				Bit set of columns fetched={0, 1}
+				Number of columns fetched=2
+				Number of deleted rows visited=0
 				Number of pages visited=1
 				Number of rows qualified=0
 				Number of rows visited=0
-				Scan type=heap
+				Scan type=btree
+				Tree height=1
 				start position:
-					null
+					None
 				stop position:
-					null
+					None
 				qualifiers:
-					Column[0][0] Id: 3
-					Operator: =
-					Ordered nulls: false
-					Unknown return value: false
-					Negate comparison result: false
-				optimizer estimated row count:            0,60
-				optimizer estimated cost:          100,40
+					None
+				optimizer estimated row count:            6,00
+				optimizer estimated cost:           20,04
+
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: EXECUTE STATEMENT SYS."getColumns" :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: EXECUTE STATEMENT SYS."getColumns" :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: EXECUTE STATEMENT SYS."getColumns" :End prepared statement with 4 parameters begin parameter #1: % :end parameter begin parameter #2: % :end parameter begin parameter #3: OCCURS :end parameter begin parameter #4: % :end parameter 
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), EXECUTE STATEMENT SYS."getColumns" ******* Sort ResultSet:
+Number of opens = 1
+Rows input = 2
+Rows returned = 2
+Eliminate duplicates = false
+In sorted order = false
+Sort information: 
+	Number of rows input=2
+	Number of rows output=2
+	Sort type=internal
+	constructor time (milliseconds) = 0
+	open time (milliseconds) = 0
+	next time (milliseconds) = 0
+	close time (milliseconds) = 0
+	optimizer estimated row count:            0,26
+	optimizer estimated cost:            7,88
+
+Source result set:
+	Project-Restrict ResultSet (12):
+	Number of opens = 1
+	Rows seen = 2
+	Rows filtered = 0
+	restriction = false
+	projection = true
+		constructor time (milliseconds) = 0
+		open time (milliseconds) = 0
+		next time (milliseconds) = 0
+		close time (milliseconds) = 0
+		restriction time (milliseconds) = 0
+		projection time (milliseconds) = 0
+		optimizer estimated row count:            0,26
+		optimizer estimated cost:            7,88
+
+	Source result set:
+		Nested Loop Join ResultSet:
+		Number of opens = 1
+		Rows seen from the left = 1
+		Rows seen from the right = 2
+		Rows filtered = 0
+		Rows returned = 2
+			constructor time (milliseconds) = 0
+			open time (milliseconds) = 0
+			next time (milliseconds) = 0
+			close time (milliseconds) = 0
+			optimizer estimated row count:            0,26
+			optimizer estimated cost:            7,88
+
+		Left result set:
+			Nested Loop Join ResultSet:
+			Number of opens = 1
+			Rows seen from the left = 12
+			Rows seen from the right = 1
+			Rows filtered = 0
+			Rows returned = 1
+				constructor time (milliseconds) = 0
+				open time (milliseconds) = 0
+				next time (milliseconds) = 0
+				close time (milliseconds) = 0
+				optimizer estimated row count:            0,06
+				optimizer estimated cost:            6,33
+
+			Left result set:
+				Project-Restrict ResultSet (5):
+				Number of opens = 1
+				Rows seen = 12
+				Rows filtered = 0
+				restriction = true
+				projection = true
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					restriction time (milliseconds) = 0
+					projection time (milliseconds) = 0
+					optimizer estimated row count:            0,43
+					optimizer estimated cost:            4,99
+
+				Source result set:
+					Index Row to Base Row ResultSet for SYSSCHEMAS:
+					Number of opens = 1
+					Rows seen = 12
+					Columns accessed from heap = {0, 1}
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,43
+						optimizer estimated cost:            4,99
+
+						Index Scan ResultSet for SYSSCHEMAS using index SYSSCHEMAS_INDEX1 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+						Number of opens = 1
+						Rows seen = 12
+						Rows filtered = 0
+						Fetch Size = 16
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							next time in milliseconds/row = 0
+
+						scan information:
+							Bit set of columns fetched=All
+							Number of columns fetched=2
+							Number of deleted rows visited=0
+							Number of pages visited=1
+							Number of rows qualified=12
+							Number of rows visited=12
+							Scan type=btree
+							Tree height=1
+							start position:
+								>= on first 1 column(s).
+								Ordered null semantics on the following columns: 
+							stop position:
+								>= on first 1 column(s).
+								Ordered null semantics on the following columns: 
+							qualifiers:
+								None
+							optimizer estimated row count:            0,43
+							optimizer estimated cost:            4,99
 
 
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: INSERT INTO BUDGET (NAME, SALDO, DEFAULTBUDGET) VALUES (?, ?, ?) :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: INSERT INTO BUDGET (NAME, SALDO, DEFAULTBUDGET) VALUES (?, ?, ?) :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: INSERT INTO BUDGET (NAME, SALDO, DEFAULTBUDGET) VALUES (?, ?, ?) :End prepared statement with 3 parameters begin parameter #1: Pippo :end parameter begin parameter #2: 10 :end parameter begin parameter #3: 1 :end parameter 
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), INSERT INTO BUDGET (NAME, SALDO, DEFAULTBUDGET) VALUES (?, ?, ?) ******* Insert ResultSet using row locking:
+			Right result set:
+				Project-Restrict ResultSet (8):
+				Number of opens = 12
+				Rows seen = 1
+				Rows filtered = 0
+				restriction = true
+				projection = true
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					restriction time (milliseconds) = 0
+					projection time (milliseconds) = 0
+					optimizer estimated row count:            0,06
+					optimizer estimated cost:            1,34
+
+				Source result set:
+					Index Row to Base Row ResultSet for SYSTABLES:
+					Number of opens = 12
+					Rows seen = 1
+					Columns accessed from heap = {0, 1, 3}
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,06
+						optimizer estimated cost:            1,34
+
+						Index Scan ResultSet for SYSTABLES using index SYSTABLES_INDEX1 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+						Number of opens = 12
+						Rows seen = 1
+						Rows filtered = 0
+						Fetch Size = 16
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							next time in milliseconds/row = 0
+
+						scan information:
+							Bit set of columns fetched=All
+							Number of columns fetched=3
+							Number of deleted rows visited=0
+							Number of pages visited=12
+							Number of rows qualified=1
+							Number of rows visited=24
+							Scan type=btree
+							Tree height=1
+							start position:
+								>= on first 2 column(s).
+								Ordered null semantics on the following columns: 
+								1 
+							stop position:
+								>= on first 1 column(s).
+								Ordered null semantics on the following columns: 
+							qualifiers:
+								Column[0][0] Id: 1
+								Operator: =
+								Ordered nulls: false
+								Unknown return value: false
+								Negate comparison result: false
+							optimizer estimated row count:            0,06
+							optimizer estimated cost:            1,34
+
+
+
+		Right result set:
+			Project-Restrict ResultSet (11):
+			Number of opens = 1
+			Rows seen = 2
+			Rows filtered = 0
+			restriction = true
+			projection = true
+				constructor time (milliseconds) = 0
+				open time (milliseconds) = 0
+				next time (milliseconds) = 0
+				close time (milliseconds) = 0
+				restriction time (milliseconds) = 0
+				projection time (milliseconds) = 0
+				optimizer estimated row count:            0,26
+				optimizer estimated cost:            1,55
+
+			Source result set:
+				Index Row to Base Row ResultSet for SYSCOLUMNS:
+				Number of opens = 1
+				Rows seen = 2
+				Columns accessed from heap = {0, 1, 2, 3, 4, 7, 8}
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					optimizer estimated row count:            0,26
+					optimizer estimated cost:            1,55
+
+					Index Scan ResultSet for SYSCOLUMNS using index SYSCOLUMNS_INDEX1 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+					Number of opens = 1
+					Rows seen = 2
+					Rows filtered = 0
+					Fetch Size = 16
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						next time in milliseconds/row = 0
+
+					scan information:
+						Bit set of columns fetched=All
+						Number of columns fetched=3
+						Number of deleted rows visited=0
+						Number of pages visited=2
+						Number of rows qualified=2
+						Number of rows visited=3
+						Scan type=btree
+						Tree height=2
+						start position:
+							>= on first 2 column(s).
+							Ordered null semantics on the following columns: 
+							0 
+						stop position:
+							>= on first 2 column(s).
+							Ordered null semantics on the following columns: 
+							0 
+						qualifiers:
+							None
+						optimizer estimated row count:            0,26
+						optimizer estimated cost:            1,55
+
+
+
+
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: EXECUTE STATEMENT SYS."getPrimaryKeys" :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: EXECUTE STATEMENT SYS."getPrimaryKeys" :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: EXECUTE STATEMENT SYS."getPrimaryKeys" :End prepared statement with 3 parameters begin parameter #1: % :end parameter begin parameter #2: % :end parameter begin parameter #3: OCCURS :end parameter 
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), EXECUTE STATEMENT SYS."getPrimaryKeys" ******* Sort ResultSet:
+Number of opens = 1
+Rows input = 1
+Rows returned = 1
+Eliminate duplicates = false
+In sorted order = false
+Sort information: 
+	Number of rows input=1
+	Number of rows output=1
+	Sort type=internal
+	constructor time (milliseconds) = 0
+	open time (milliseconds) = 0
+	next time (milliseconds) = 0
+	close time (milliseconds) = 0
+	optimizer estimated row count:            0,56
+	optimizer estimated cost:           47,27
+
+Source result set:
+	Project-Restrict ResultSet (23):
+	Number of opens = 1
+	Rows seen = 1
+	Rows filtered = 0
+	restriction = false
+	projection = true
+		constructor time (milliseconds) = 0
+		open time (milliseconds) = 0
+		next time (milliseconds) = 0
+		close time (milliseconds) = 0
+		restriction time (milliseconds) = 0
+		projection time (milliseconds) = 0
+		optimizer estimated row count:            0,56
+		optimizer estimated cost:           47,27
+
+	Source result set:
+		User supplied optimizer overrides for join are { joinOrder=FIXED }
+		Nested Loop Join ResultSet:
+		Number of opens = 1
+		Rows seen from the left = 1
+		Rows seen from the right = 1
+		Rows filtered = 0
+		Rows returned = 1
+			constructor time (milliseconds) = 0
+			open time (milliseconds) = 0
+			next time (milliseconds) = 0
+			close time (milliseconds) = 0
+			optimizer estimated row count:            0,56
+			optimizer estimated cost:           47,27
+
+		Left result set:
+			User supplied optimizer overrides for join are { joinOrder=FIXED }
+			Nested Loop Join ResultSet:
+			Number of opens = 1
+			Rows seen from the left = 1
+			Rows seen from the right = 1
+			Rows filtered = 0
+			Rows returned = 1
+				constructor time (milliseconds) = 0
+				open time (milliseconds) = 0
+				next time (milliseconds) = 0
+				close time (milliseconds) = 0
+				optimizer estimated row count:            0,10
+				optimizer estimated cost:           41,88
+
+			Left result set:
+				User supplied optimizer overrides for join are { joinOrder=FIXED }
+				Nested Loop Exists Join ResultSet:
+				Number of opens = 1
+				Rows seen from the left = 1
+				Rows seen from the right = 1
+				Rows filtered = 0
+				Rows returned = 1
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					optimizer estimated row count:            0,13
+					optimizer estimated cost:           37,33
+
+				Left result set:
+					User supplied optimizer overrides for join are { joinOrder=FIXED }
+					Nested Loop Join ResultSet:
+					Number of opens = 1
+					Rows seen from the left = 1
+					Rows seen from the right = 1
+					Rows filtered = 0
+					Rows returned = 1
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,13
+						optimizer estimated cost:           35,55
+
+					Left result set:
+						User supplied optimizer overrides for join are { joinOrder=FIXED }
+						Nested Loop Join ResultSet:
+						Number of opens = 1
+						Rows seen from the left = 1
+						Rows seen from the right = 1
+						Rows filtered = 0
+						Rows returned = 1
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							optimizer estimated row count:            1,28
+							optimizer estimated cost:           25,04
+
+						Left result set:
+							Project-Restrict ResultSet (8):
+							Number of opens = 1
+							Rows seen = 1
+							Rows filtered = 0
+							restriction = false
+							projection = true
+								constructor time (milliseconds) = 0
+								open time (milliseconds) = 0
+								next time (milliseconds) = 0
+								close time (milliseconds) = 0
+								restriction time (milliseconds) = 0
+								projection time (milliseconds) = 0
+								optimizer estimated row count:            1,50
+								optimizer estimated cost:           14,09
+
+							Source result set:
+								Index Row to Base Row ResultSet for SYSTABLES:
+								Number of opens = 1
+								Rows seen = 1
+								Columns accessed from heap = {0, 1, 3}
+									constructor time (milliseconds) = 0
+									open time (milliseconds) = 0
+									next time (milliseconds) = 0
+									close time (milliseconds) = 0
+									optimizer estimated row count:            1,50
+									optimizer estimated cost:           14,09
+
+									User supplied optimizer overrides on SYSTABLES are { index=SYSTABLES_INDEX1 }
+									Index Scan ResultSet for SYSTABLES using index SYSTABLES_INDEX1 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+									Number of opens = 1
+									Rows seen = 1
+									Rows filtered = 0
+									Fetch Size = 16
+										constructor time (milliseconds) = 0
+										open time (milliseconds) = 0
+										next time (milliseconds) = 0
+										close time (milliseconds) = 0
+										next time in milliseconds/row = 0
+
+									scan information:
+										Bit set of columns fetched={0, 2}
+										Number of columns fetched=2
+										Number of deleted rows visited=0
+										Number of pages visited=1
+										Number of rows qualified=1
+										Number of rows visited=2
+										Scan type=btree
+										Tree height=1
+										start position:
+											>= on first 1 column(s).
+											Ordered null semantics on the following columns: 
+										stop position:
+											> on first 1 column(s).
+											Ordered null semantics on the following columns: 
+										qualifiers:
+											None
+										optimizer estimated row count:            1,50
+										optimizer estimated cost:           14,09
+
+
+						Right result set:
+							Project-Restrict ResultSet (11):
+							Number of opens = 1
+							Rows seen = 12
+							Rows filtered = 11
+							restriction = true
+							projection = true
+								constructor time (milliseconds) = 0
+								open time (milliseconds) = 0
+								next time (milliseconds) = 0
+								close time (milliseconds) = 0
+								restriction time (milliseconds) = 0
+								projection time (milliseconds) = 0
+								optimizer estimated row count:            1,28
+								optimizer estimated cost:           10,94
+
+							Source result set:
+								Index Row to Base Row ResultSet for SYSSCHEMAS:
+								Number of opens = 1
+								Rows seen = 12
+								Columns accessed from heap = {0, 1}
+									constructor time (milliseconds) = 0
+									open time (milliseconds) = 0
+									next time (milliseconds) = 0
+									close time (milliseconds) = 0
+									optimizer estimated row count:            1,28
+									optimizer estimated cost:           10,94
+
+									User supplied optimizer overrides on SYSSCHEMAS are { index=SYSSCHEMAS_INDEX1, joinStrategy=NESTEDLOOP }
+									Index Scan ResultSet for SYSSCHEMAS using index SYSSCHEMAS_INDEX1 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+									Number of opens = 1
+									Rows seen = 12
+									Rows filtered = 0
+									Fetch Size = 16
+										constructor time (milliseconds) = 0
+										open time (milliseconds) = 0
+										next time (milliseconds) = 0
+										close time (milliseconds) = 0
+										next time in milliseconds/row = 0
+
+									scan information:
+										Bit set of columns fetched=All
+										Number of columns fetched=2
+										Number of deleted rows visited=0
+										Number of pages visited=1
+										Number of rows qualified=12
+										Number of rows visited=12
+										Scan type=btree
+										Tree height=1
+										start position:
+											>= on first 1 column(s).
+											Ordered null semantics on the following columns: 
+										stop position:
+											>= on first 1 column(s).
+											Ordered null semantics on the following columns: 
+										qualifiers:
+											None
+										optimizer estimated row count:            1,28
+										optimizer estimated cost:           10,94
+
+
+
+					Right result set:
+						Project-Restrict ResultSet (14):
+						Number of opens = 1
+						Rows seen = 1
+						Rows filtered = 0
+						restriction = true
+						projection = true
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							restriction time (milliseconds) = 0
+							projection time (milliseconds) = 0
+							optimizer estimated row count:            0,13
+							optimizer estimated cost:           10,51
+
+						Source result set:
+							Index Row to Base Row ResultSet for SYSCONSTRAINTS:
+							Number of opens = 1
+							Rows seen = 1
+							Columns accessed from heap = {0, 1, 2, 3}
+								constructor time (milliseconds) = 0
+								open time (milliseconds) = 0
+								next time (milliseconds) = 0
+								close time (milliseconds) = 0
+								optimizer estimated row count:            0,13
+								optimizer estimated cost:           10,51
+
+								User supplied optimizer overrides on SYSCONSTRAINTS are { index=SYSCONSTRAINTS_INDEX3, joinStrategy=NESTEDLOOP }
+								Index Scan ResultSet for SYSCONSTRAINTS using index SYSCONSTRAINTS_INDEX3 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+								Number of opens = 1
+								Rows seen = 1
+								Rows filtered = 0
+								Fetch Size = 16
+									constructor time (milliseconds) = 0
+									open time (milliseconds) = 0
+									next time (milliseconds) = 0
+									close time (milliseconds) = 0
+									next time in milliseconds/row = 0
+
+								scan information:
+									Bit set of columns fetched=All
+									Number of columns fetched=2
+									Number of deleted rows visited=0
+									Number of pages visited=1
+									Number of rows qualified=1
+									Number of rows visited=1
+									Scan type=btree
+									Tree height=1
+									start position:
+										>= on first 1 column(s).
+										Ordered null semantics on the following columns: 
+										0 
+									stop position:
+										> on first 1 column(s).
+										Ordered null semantics on the following columns: 
+										0 
+									qualifiers:
+										None
+									optimizer estimated row count:            0,13
+									optimizer estimated cost:           10,51
+
+
+
+				Right result set:
+					Index Row to Base Row ResultSet for SYSKEYS:
+					Number of opens = 1
+					Rows seen = 1
+					Columns accessed from heap = {1}
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,13
+						optimizer estimated cost:            1,78
+
+						User supplied optimizer overrides on SYSKEYS are { index=SYSKEYS_INDEX1, joinStrategy=NESTEDLOOP }
+						Index Scan ResultSet for SYSKEYS using index SYSKEYS_INDEX1 at read committed isolation level using share row locking chosen by the optimizer
+						Number of opens = 1
+						Rows seen = 1
+						Rows filtered = 0
+						Fetch Size = 1
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							next time in milliseconds/row = 0
+
+						scan information:
+							Bit set of columns fetched=All
+							Number of columns fetched=2
+							Number of deleted rows visited=0
+							Number of pages visited=1
+							Number of rows qualified=1
+							Number of rows visited=1
+							Scan type=btree
+							Tree height=1
+							start position:
+								>= on first 1 column(s).
+								Ordered null semantics on the following columns: 
+								0 
+							stop position:
+								> on first 1 column(s).
+								Ordered null semantics on the following columns: 
+								0 
+							qualifiers:
+								None
+							optimizer estimated row count:            0,13
+							optimizer estimated cost:            1,78
+
+
+
+			Right result set:
+				Project-Restrict ResultSet (19):
+				Number of opens = 1
+				Rows seen = 1
+				Rows filtered = 0
+				restriction = true
+				projection = true
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					restriction time (milliseconds) = 0
+					projection time (milliseconds) = 0
+					optimizer estimated row count:            0,10
+					optimizer estimated cost:            4,55
+
+				Source result set:
+					Index Row to Base Row ResultSet for SYSCONGLOMERATES:
+					Number of opens = 1
+					Rows seen = 1
+					Columns accessed from heap = {1, 5, 7}
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						optimizer estimated row count:            0,10
+						optimizer estimated cost:            4,55
+
+						User supplied optimizer overrides on SYSCONGLOMERATES are { index=SYSCONGLOMERATES_INDEX1, joinStrategy=NESTEDLOOP }
+						Index Scan ResultSet for SYSCONGLOMERATES using index SYSCONGLOMERATES_INDEX1 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+						Number of opens = 1
+						Rows seen = 1
+						Rows filtered = 0
+						Fetch Size = 16
+							constructor time (milliseconds) = 0
+							open time (milliseconds) = 0
+							next time (milliseconds) = 0
+							close time (milliseconds) = 0
+							next time in milliseconds/row = 0
+
+						scan information:
+							Bit set of columns fetched=All
+							Number of columns fetched=2
+							Number of deleted rows visited=0
+							Number of pages visited=2
+							Number of rows qualified=1
+							Number of rows visited=2
+							Scan type=btree
+							Tree height=2
+							start position:
+								>= on first 1 column(s).
+								Ordered null semantics on the following columns: 
+								0 
+							stop position:
+								> on first 1 column(s).
+								Ordered null semantics on the following columns: 
+								0 
+							qualifiers:
+								None
+							optimizer estimated row count:            0,10
+							optimizer estimated cost:            4,55
+
+
+
+		Right result set:
+			Project-Restrict ResultSet (22):
+			Number of opens = 1
+			Rows seen = 2
+			Rows filtered = 1
+			restriction = true
+			projection = true
+				constructor time (milliseconds) = 0
+				open time (milliseconds) = 0
+				next time (milliseconds) = 0
+				close time (milliseconds) = 0
+				restriction time (milliseconds) = 0
+				projection time (milliseconds) = 0
+				optimizer estimated row count:            0,56
+				optimizer estimated cost:            5,40
+
+			Source result set:
+				Index Row to Base Row ResultSet for SYSCOLUMNS:
+				Number of opens = 1
+				Rows seen = 2
+				Columns accessed from heap = {0, 1, 2}
+					constructor time (milliseconds) = 0
+					open time (milliseconds) = 0
+					next time (milliseconds) = 0
+					close time (milliseconds) = 0
+					optimizer estimated row count:            0,56
+					optimizer estimated cost:            5,40
+
+					User supplied optimizer overrides on SYSCOLUMNS are { index=SYSCOLUMNS_INDEX1, joinStrategy=NESTEDLOOP }
+					Index Scan ResultSet for SYSCOLUMNS using index SYSCOLUMNS_INDEX1 at read committed isolation level using instantaneous share row locking chosen by the optimizer
+					Number of opens = 1
+					Rows seen = 2
+					Rows filtered = 0
+					Fetch Size = 16
+						constructor time (milliseconds) = 0
+						open time (milliseconds) = 0
+						next time (milliseconds) = 0
+						close time (milliseconds) = 0
+						next time in milliseconds/row = 0
+
+					scan information:
+						Bit set of columns fetched={0, 2}
+						Number of columns fetched=2
+						Number of deleted rows visited=0
+						Number of pages visited=2
+						Number of rows qualified=2
+						Number of rows visited=3
+						Scan type=btree
+						Tree height=2
+						start position:
+							>= on first 1 column(s).
+							Ordered null semantics on the following columns: 
+							0 
+						stop position:
+							> on first 1 column(s).
+							Ordered null semantics on the following columns: 
+							0 
+						qualifiers:
+							None
+						optimizer estimated row count:            0,56
+						optimizer estimated cost:            5,40
+
+
+
+
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: insert into OCCURS (NAME) values (?) :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: insert into OCCURS (NAME) values (?) :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: insert into OCCURS (NAME) values (?) :End prepared statement with 1 parameters begin parameter #1: Anno :end parameter 
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), insert into OCCURS (NAME) values (?) ******* Insert ResultSet using row locking:
 deferred: false
 insert mode: normal
 Rows inserted = 1
@@ -226,41 +1277,87 @@ Execute Time = 0
 
 
 
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: values IDENTITY_VAL_LOCAL() :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: values IDENTITY_VAL_LOCAL() :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: values IDENTITY_VAL_LOCAL() :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), values IDENTITY_VAL_LOCAL() ******* Row ResultSet:
-Number of opens = 1
-Rows returned = 1
-	constructor time (milliseconds) = 0
-	open time (milliseconds) = 0
-	next time (milliseconds) = 0
-	close time (milliseconds) = 0
-	optimizer estimated row count:            1,00
-	optimizer estimated cost:            0,00
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: insert into OCCURS (NAME) values (?) :End prepared statement with 1 parameters begin parameter #1: Mese :end parameter 
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), insert into OCCURS (NAME) values (?) ******* Insert ResultSet using row locking:
+deferred: false
+insert mode: normal
+Rows inserted = 1
+Indexes updated = 1
+Execute Time = 0
+	Normalize ResultSet:
+	Number of opens = 2
+	Rows seen = 2
+		constructor time (milliseconds) = 0
+		open time (milliseconds) = 0
+		next time (milliseconds) = 0
+		close time (milliseconds) = 0
+		optimizer estimated row count:            1,00
+		optimizer estimated cost:            0,00
+
+	Source result set:
+		Row ResultSet:
+		Number of opens = 2
+		Rows returned = 2
+			constructor time (milliseconds) = 0
+			open time (milliseconds) = 0
+			next time (milliseconds) = 0
+			close time (milliseconds) = 0
+			optimizer estimated row count:            1,00
+			optimizer estimated cost:            0,00
 
 
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7302), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7307), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7307), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7307), (SESSIONID = 5), SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET ******* Table Scan ResultSet for BUDGET at read committed isolation level using instantaneous share row locking chosen by the optimizer
+
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: insert into OCCURS (NAME) values (?) :End prepared statement with 1 parameters begin parameter #1: Giorno :end parameter 
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), insert into OCCURS (NAME) values (?) ******* Insert ResultSet using row locking:
+deferred: false
+insert mode: normal
+Rows inserted = 1
+Indexes updated = 1
+Execute Time = 0
+	Normalize ResultSet:
+	Number of opens = 3
+	Rows seen = 3
+		constructor time (milliseconds) = 0
+		open time (milliseconds) = 0
+		next time (milliseconds) = 0
+		close time (milliseconds) = 0
+		optimizer estimated row count:            1,00
+		optimizer estimated cost:            0,00
+
+	Source result set:
+		Row ResultSet:
+		Number of opens = 3
+		Rows returned = 3
+			constructor time (milliseconds) = 0
+			open time (milliseconds) = 0
+			next time (milliseconds) = 0
+			close time (milliseconds) = 0
+			optimizer estimated row count:            1,00
+			optimizer estimated cost:            0,00
+
+
+
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8315), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8326), (SESSIONID = 3), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8326), (SESSIONID = 3), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8326), (SESSIONID = 3), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET :End prepared statement
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8326), (SESSIONID = 3), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8326), (SESSIONID = 3), SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET ******* Table Scan ResultSet for BUDGET at read committed isolation level using instantaneous share row locking chosen by the optimizer
 Number of opens = 1
-Rows seen = 1
+Rows seen = 0
 Rows filtered = 0
 Fetch Size = 16
 	constructor time (milliseconds) = 0
 	open time (milliseconds) = 0
 	next time (milliseconds) = 0
 	close time (milliseconds) = 0
-	next time in milliseconds/row = 0
 
 scan information:
 	Bit set of columns fetched=All
 	Number of columns fetched=4
 	Number of pages visited=1
-	Number of rows qualified=1
-	Number of rows visited=1
+	Number of rows qualified=0
+	Number of rows visited=0
 	Scan type=heap
 	start position:
 		null
@@ -271,362 +1368,10 @@ scan information:
 	optimizer estimated row count:            6,00
 	optimizer estimated cost:          100,40
 
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7307), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Begin compiling prepared statement: SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), End compiling prepared statement: SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC :End prepared statement
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC :End prepared statement with 2 parameters begin parameter #1: 1 :end parameter begin parameter #2: R :end parameter 
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7308), (SESSIONID = 5), SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC ******* Sort ResultSet:
-Number of opens = 1
-Rows input = 0
-Rows returned = 0
-Eliminate duplicates = false
-In sorted order = false
-Sort information: 
-	Number of rows input=0
-	Number of rows output=0
-	Sort type=internal
-	constructor time (milliseconds) = 0
-	open time (milliseconds) = 0
-	next time (milliseconds) = 0
-	close time (milliseconds) = 0
-	optimizer estimated row count:            0,06
-	optimizer estimated cost:           15,05
-
-Source result set:
-	Project-Restrict ResultSet (3):
-	Number of opens = 1
-	Rows seen = 0
-	Rows filtered = 0
-	restriction = true
-	projection = true
-		constructor time (milliseconds) = 0
-		open time (milliseconds) = 0
-		next time (milliseconds) = 0
-		close time (milliseconds) = 0
-		restriction time (milliseconds) = 0
-		projection time (milliseconds) = 0
-		optimizer estimated row count:            0,06
-		optimizer estimated cost:           15,05
-
-	Source result set:
-		Index Row to Base Row ResultSet for BUDGETENTRY:
-		Number of opens = 1
-		Rows seen = 0
-		Columns accessed from heap = {0, 1, 2, 3, 4, 5, 6}
-			constructor time (milliseconds) = 0
-			open time (milliseconds) = 0
-			next time (milliseconds) = 0
-			close time (milliseconds) = 0
-			optimizer estimated row count:            0,06
-			optimizer estimated cost:           15,05
-
-			Index Scan ResultSet for BUDGETENTRY using constraint BDGTNTRYBDGTBDGDID at read committed isolation level using instantaneous share row locking chosen by the optimizer
-			Number of opens = 1
-			Rows seen = 0
-			Rows filtered = 0
-			Fetch Size = 16
-				constructor time (milliseconds) = 0
-				open time (milliseconds) = 0
-				next time (milliseconds) = 0
-				close time (milliseconds) = 0
-
-			scan information:
-				Bit set of columns fetched=All
-				Number of columns fetched=2
-				Number of deleted rows visited=0
-				Number of pages visited=1
-				Number of rows qualified=0
-				Number of rows visited=0
-				Scan type=btree
-				Tree height=1
-				start position:
-					>= on first 1 column(s).
-					Ordered null semantics on the following columns: 
-				stop position:
-					> on first 1 column(s).
-					Ordered null semantics on the following columns: 
-				qualifiers:
-					None
-				optimizer estimated row count:            0,06
-				optimizer estimated cost:           15,05
-
-
-
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7308), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7310), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC :End prepared statement with 2 parameters begin parameter #1: 1 :end parameter begin parameter #2: R :end parameter 
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7310), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7310), (SESSIONID = 5), SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC ******* Sort ResultSet:
-Number of opens = 1
-Rows input = 0
-Rows returned = 0
-Eliminate duplicates = false
-In sorted order = false
-Sort information: 
-	Number of rows input=0
-	Number of rows output=0
-	Sort type=internal
-	constructor time (milliseconds) = 0
-	open time (milliseconds) = 0
-	next time (milliseconds) = 0
-	close time (milliseconds) = 0
-	optimizer estimated row count:            0,06
-	optimizer estimated cost:           15,05
-
-Source result set:
-	Project-Restrict ResultSet (3):
-	Number of opens = 1
-	Rows seen = 0
-	Rows filtered = 0
-	restriction = true
-	projection = true
-		constructor time (milliseconds) = 0
-		open time (milliseconds) = 0
-		next time (milliseconds) = 0
-		close time (milliseconds) = 0
-		restriction time (milliseconds) = 0
-		projection time (milliseconds) = 0
-		optimizer estimated row count:            0,06
-		optimizer estimated cost:           15,05
-
-	Source result set:
-		Index Row to Base Row ResultSet for BUDGETENTRY:
-		Number of opens = 1
-		Rows seen = 0
-		Columns accessed from heap = {0, 1, 2, 3, 4, 5, 6}
-			constructor time (milliseconds) = 0
-			open time (milliseconds) = 0
-			next time (milliseconds) = 0
-			close time (milliseconds) = 0
-			optimizer estimated row count:            0,06
-			optimizer estimated cost:           15,05
-
-			Index Scan ResultSet for BUDGETENTRY using constraint BDGTNTRYBDGTBDGDID at read committed isolation level using instantaneous share row locking chosen by the optimizer
-			Number of opens = 1
-			Rows seen = 0
-			Rows filtered = 0
-			Fetch Size = 16
-				constructor time (milliseconds) = 0
-				open time (milliseconds) = 0
-				next time (milliseconds) = 0
-				close time (milliseconds) = 0
-
-			scan information:
-				Bit set of columns fetched=All
-				Number of columns fetched=2
-				Number of deleted rows visited=0
-				Number of pages visited=1
-				Number of rows qualified=0
-				Number of rows visited=0
-				Scan type=btree
-				Tree height=1
-				start position:
-					>= on first 1 column(s).
-					Ordered null semantics on the following columns: 
-				stop position:
-					> on first 1 column(s).
-					Ordered null semantics on the following columns: 
-				qualifiers:
-					None
-				optimizer estimated row count:            0,06
-				optimizer estimated cost:           15,05
-
-
-
-Thu Mar 08 20:16:48 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7310), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7311), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET :End prepared statement
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7311), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7311), (SESSIONID = 5), SELECT BUDGEDID, NAME, SALDO, DEFAULTBUDGET FROM BUDGET ******* Table Scan ResultSet for BUDGET at read committed isolation level using instantaneous share row locking chosen by the optimizer
-Number of opens = 1
-Rows seen = 1
-Rows filtered = 0
-Fetch Size = 16
-	constructor time (milliseconds) = 0
-	open time (milliseconds) = 0
-	next time (milliseconds) = 0
-	close time (milliseconds) = 0
-	next time in milliseconds/row = 0
-
-scan information:
-	Bit set of columns fetched=All
-	Number of columns fetched=4
-	Number of pages visited=1
-	Number of rows qualified=1
-	Number of rows visited=1
-	Scan type=heap
-	start position:
-		null
-	stop position:
-		null
-	qualifiers:
-		None
-	optimizer estimated row count:            6,00
-	optimizer estimated cost:          100,40
-
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7311), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7312), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC :End prepared statement with 2 parameters begin parameter #1: 1 :end parameter begin parameter #2: R :end parameter 
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7312), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7312), (SESSIONID = 5), SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC ******* Sort ResultSet:
-Number of opens = 1
-Rows input = 0
-Rows returned = 0
-Eliminate duplicates = false
-In sorted order = false
-Sort information: 
-	Number of rows input=0
-	Number of rows output=0
-	Sort type=internal
-	constructor time (milliseconds) = 0
-	open time (milliseconds) = 0
-	next time (milliseconds) = 0
-	close time (milliseconds) = 0
-	optimizer estimated row count:            0,06
-	optimizer estimated cost:           15,05
-
-Source result set:
-	Project-Restrict ResultSet (3):
-	Number of opens = 1
-	Rows seen = 0
-	Rows filtered = 0
-	restriction = true
-	projection = true
-		constructor time (milliseconds) = 0
-		open time (milliseconds) = 0
-		next time (milliseconds) = 0
-		close time (milliseconds) = 0
-		restriction time (milliseconds) = 0
-		projection time (milliseconds) = 0
-		optimizer estimated row count:            0,06
-		optimizer estimated cost:           15,05
-
-	Source result set:
-		Index Row to Base Row ResultSet for BUDGETENTRY:
-		Number of opens = 1
-		Rows seen = 0
-		Columns accessed from heap = {0, 1, 2, 3, 4, 5, 6}
-			constructor time (milliseconds) = 0
-			open time (milliseconds) = 0
-			next time (milliseconds) = 0
-			close time (milliseconds) = 0
-			optimizer estimated row count:            0,06
-			optimizer estimated cost:           15,05
-
-			Index Scan ResultSet for BUDGETENTRY using constraint BDGTNTRYBDGTBDGDID at read committed isolation level using instantaneous share row locking chosen by the optimizer
-			Number of opens = 1
-			Rows seen = 0
-			Rows filtered = 0
-			Fetch Size = 16
-				constructor time (milliseconds) = 0
-				open time (milliseconds) = 0
-				next time (milliseconds) = 0
-				close time (milliseconds) = 0
-
-			scan information:
-				Bit set of columns fetched=All
-				Number of columns fetched=2
-				Number of deleted rows visited=0
-				Number of pages visited=1
-				Number of rows qualified=0
-				Number of rows visited=0
-				Scan type=btree
-				Tree height=1
-				start position:
-					>= on first 1 column(s).
-					Ordered null semantics on the following columns: 
-				stop position:
-					> on first 1 column(s).
-					Ordered null semantics on the following columns: 
-				qualifiers:
-					None
-				optimizer estimated row count:            0,06
-				optimizer estimated cost:           15,05
-
-
-
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7312), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7313), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Executing prepared statement: SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC :End prepared statement with 2 parameters begin parameter #1: 1 :end parameter begin parameter #2: R :end parameter 
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7313), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7313), (SESSIONID = 5), SELECT BUDGETENTRYID, TYPE, VALUE, DATE, BUDGET_BUDGEDID, SUBCATEGORY_SUBCATEGORYID, CATEGORY_CATEGORYID FROM BUDGETENTRY WHERE ((BUDGET_BUDGEDID = ?) AND (TYPE = ?)) ORDER BY DATE ASC ******* Sort ResultSet:
-Number of opens = 1
-Rows input = 0
-Rows returned = 0
-Eliminate duplicates = false
-In sorted order = false
-Sort information: 
-	Number of rows input=0
-	Number of rows output=0
-	Sort type=internal
-	constructor time (milliseconds) = 0
-	open time (milliseconds) = 0
-	next time (milliseconds) = 0
-	close time (milliseconds) = 0
-	optimizer estimated row count:            0,06
-	optimizer estimated cost:           15,05
-
-Source result set:
-	Project-Restrict ResultSet (3):
-	Number of opens = 1
-	Rows seen = 0
-	Rows filtered = 0
-	restriction = true
-	projection = true
-		constructor time (milliseconds) = 0
-		open time (milliseconds) = 0
-		next time (milliseconds) = 0
-		close time (milliseconds) = 0
-		restriction time (milliseconds) = 0
-		projection time (milliseconds) = 0
-		optimizer estimated row count:            0,06
-		optimizer estimated cost:           15,05
-
-	Source result set:
-		Index Row to Base Row ResultSet for BUDGETENTRY:
-		Number of opens = 1
-		Rows seen = 0
-		Columns accessed from heap = {0, 1, 2, 3, 4, 5, 6}
-			constructor time (milliseconds) = 0
-			open time (milliseconds) = 0
-			next time (milliseconds) = 0
-			close time (milliseconds) = 0
-			optimizer estimated row count:            0,06
-			optimizer estimated cost:           15,05
-
-			Index Scan ResultSet for BUDGETENTRY using constraint BDGTNTRYBDGTBDGDID at read committed isolation level using instantaneous share row locking chosen by the optimizer
-			Number of opens = 1
-			Rows seen = 0
-			Rows filtered = 0
-			Fetch Size = 16
-				constructor time (milliseconds) = 0
-				open time (milliseconds) = 0
-				next time (milliseconds) = 0
-				close time (milliseconds) = 0
-
-			scan information:
-				Bit set of columns fetched=All
-				Number of columns fetched=2
-				Number of deleted rows visited=0
-				Number of pages visited=1
-				Number of rows qualified=0
-				Number of rows visited=0
-				Scan type=btree
-				Tree height=1
-				start position:
-					>= on first 1 column(s).
-					Ordered null semantics on the following columns: 
-				stop position:
-					> on first 1 column(s).
-					Ordered null semantics on the following columns: 
-				qualifiers:
-					None
-				optimizer estimated row count:            0,06
-				optimizer estimated cost:           15,05
-
-
-
-Thu Mar 08 20:17:00 CET 2012 Thread[AWT-EventQueue-0,6,main] (XID = 7313), (SESSIONID = 5), (DATABASE = ./database), (DRDAID = null), Committing
+Thu Mar 08 20:47:01 CET 2012 Thread[SwingWorker-pool-1-thread-1,5,main] (XID = 8326), (SESSIONID = 3), (DATABASE = ./database), (DRDAID = null), Committing
 ----------------------------------------------------------------
-Thu Mar 08 20:17:16 CET 2012: Shutting down Derby engine
+Thu Mar 08 20:47:11 CET 2012: Shutting down Derby engine
 ----------------------------------------------------------------
-Thu Mar 08 20:17:16 CET 2012:
-Shutting down instance a816c00e-0135-f3bd-cdb0-000000b6ee50 on database directory C:\Users\muia\workspace\programmi\superbudget\database with class loader sun.misc.Launcher$AppClassLoader@11b86e7 
+Thu Mar 08 20:47:11 CET 2012:
+Shutting down instance a816c00e-0135-f3d9-9bcb-000000bfb8c8 on database directory C:\Users\muia\workspace\programmi\superbudget\database with class loader sun.misc.Launcher$AppClassLoader@11b86e7 
 ----------------------------------------------------------------
