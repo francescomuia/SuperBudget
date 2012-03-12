@@ -26,7 +26,7 @@ public class Budget implements Serializable
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long budgedId;
+	private Long budgetId;
 
 	private String name;
 
@@ -49,14 +49,14 @@ public class Budget implements Serializable
 		this.defaultBudget = defaultBudget;
 	}
 
-	public Long getBudgedId()
+	public Long getBudgetId()
 	{
-		return budgedId;
+		return budgetId;
 	}
 
-	public void setBudgedId(Long budgedId)
+	public void setBudgetId(Long budgedId)
 	{
-		this.budgedId = budgedId;
+		this.budgetId = budgedId;
 	}
 
 	public String getName()
@@ -102,7 +102,7 @@ public class Budget implements Serializable
 	@Override
 	public String toString()
 	{
-		return "Budget [budgedId=" + budgedId + ", name=" + name + ", saldo=" + saldo + ", defaultBudget=" + defaultBudget + ", budgetEntries="
+		return "Budget [budgedId=" + budgetId + ", name=" + name + ", saldo=" + saldo + ", defaultBudget=" + defaultBudget + ", budgetEntries="
 				+ budgetEntries + "]";
 	}
 

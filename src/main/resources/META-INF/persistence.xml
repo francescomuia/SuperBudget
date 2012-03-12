@@ -8,8 +8,8 @@
 		<class>it.superbudget.persistence.entities.Category</class>
 		<class>it.superbudget.persistence.entities.SubCategory</class>
 		<class>it.superbudget.persistence.entities.Expenses</class>
-		<class>it.superbudget.persistence.entities.Revenues</class>
-		<class>it.superbudget.persistence.entities.Occurs</class>
+		<class>it.superbudget.persistence.entities.Income</class>
+		<class>it.superbudget.persistence.entities.Recurrence</class>
 		<properties>
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="database" />
@@ -18,7 +18,9 @@
 			<property name="javax.persistence.jdbc.user" value="superbudget" />
 			<property name="javax.persistence.jdbc.password" value="tegdubrepus" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby:./database;create=true" />
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<!-- <property name="eclipselink.ddl-generation" value="drop-and-create-tables" 
+				/> -->
+			<property name="eclipselink.ddl-generation" value="create-tables" />
 		</properties>
 	</persistence-unit>
 

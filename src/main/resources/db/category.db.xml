@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<dataset>
+	<category name="Casa"/>
+	<subcategory name="Bollette" category_categoryid="1"/>
+	<subcategory name="Spesa" category_categoryid="1" />
+	<category name="Ufficio"/>
+	<subcategory name="Carta" category_categoryid="2"/>
+	<category name="Macchina"/>
+	<subcategory name="Manutenzione" category_categoryid="3"/>
+	<subcategory name="Benzina" category_categoryid="3"/>
+
+</dataset>

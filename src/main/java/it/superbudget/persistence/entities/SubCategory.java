@@ -83,4 +83,9 @@ public class SubCategory
 		this.category = category;
 	}
 
+	public String toString()
+	{
+		return name;
+	}
+
 }

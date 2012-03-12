@@ -22,14 +22,16 @@ import javax.persistence.TemporalType;
 @NamedQueries(value =
 {
 
-@NamedQuery(name = "getBudgetIncome", query = "Select t From Revenues t where t.budget =:budget order by t.date"),
-		@NamedQuery(name = "getBudgetExpenses", query = "Select t From Revenues t where t.budget =:budget order by t.date") })
+@NamedQuery(name = "getBudgetIncome", query = "Select t From Income t where t.budget =:budget order by t.date"),
+		@NamedQuery(name = "getBudgetExpenses", query = "Select t From Income t where t.budget =:budget order by t.date"),
+		@NamedQuery(name = "getYearlyBudgetIncome", query = "Select t From Income t where t.budget =:budget AND t.date between :first AND :last") })
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.CHAR)
 @DiscriminatorValue("B")
 public abstract class BudgetEntry implements Serializable
 {
+
 	/**
 	 * 
 	 */
@@ -51,9 +53,30 @@ public abstract class BudgetEntry implements Serializable
 	@ManyToOne
 	private Budget budget;
 
-	private boolean recursive;
+	private Integer recurrenceValue;
 
-	private Occurs occurs;
+	private String note;
+
+	@ManyToOne
+	private Recurrence recurrence;
+
+	public BudgetEntry()
+	{
+
+	}
+
+	public BudgetEntry(BigDecimal value, Category category, SubCategory subCategory, Date date, Budget budget, Integer recurrenceValue, String note,
+			Recurrence recurrence)
+	{
+		this.value = value;
+		this.category = category;
+		this.subCategory = subCategory;
+		this.date = date;
+		this.budget = budget;
+		this.recurrenceValue = recurrenceValue;
+		this.note = note;
+		this.recurrence = recurrence;
+	}
 
 	public Long getBudgetEntryId()
 	{
@@ -143,4 +166,35 @@ public abstract class BudgetEntry implements Serializable
 	{
 		this.subCategory = subCategory;
 	}
+
+	public String getNote()
+	{
+		return note;
+	}
+
+	public void setNote(String note)
+	{
+		this.note = note;
+	}
+
+	public Integer getRecurrenceValue()
+	{
+		return recurrenceValue;
+	}
+
+	public void setRecurrenceValue(Integer recurrenceValue)
+	{
+		this.recurrenceValue = recurrenceValue;
+	}
+
+	public Recurrence getRecurrence()
+	{
+		return recurrence;
+	}
+
+	public void setRecurrence(Recurrence recurrence)
+	{
+		this.recurrence = recurrence;
+	}
+
 }

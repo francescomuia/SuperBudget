@@ -1,6 +1,7 @@
 package it.superbudget.util.bundles;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -38,5 +39,16 @@ public class ResourcesBundlesUtil
 			getLogger().error("Failed to load Version Properties", e);
 		}
 		return null;
+	}
+
+	public static void dump(ResourceBundle bundle)
+	{
+		Logger logger = getLogger();
+		Iterator<String> keys = bundle.keySet().iterator();
+		while (keys.hasNext())
+		{
+			String key = keys.next();
+			logger.debug(key + " = " + bundle.getString(key));
+		}
 	}
 }

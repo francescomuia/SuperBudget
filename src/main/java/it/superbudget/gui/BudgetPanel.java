@@ -1,17 +1,22 @@
 package it.superbudget.gui;
 
+import it.superbudget.gui.jtable.BigDecimalCellRenderer;
+import it.superbudget.gui.jtable.DateCellRenderer;
 import it.superbudget.persistence.dao.BudgetDao;
 import it.superbudget.persistence.dao.BudgetEntryDao;
 import it.superbudget.persistence.entities.Budget;
-import it.superbudget.persistence.entities.BudgetEntry;
+import it.superbudget.persistence.entities.BudgetEntryView;
 import it.superbudget.util.bundles.ResourcesBundlesUtil;
 import it.superbudget.util.fonts.FontUtils;
 import it.superbudget.util.messages.MessagesUtils;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -22,6 +27,7 @@ import java.util.ResourceBundle;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -31,8 +37,14 @@ import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 import org.apache.log4j.Logger;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
 
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
@@ -67,6 +79,18 @@ public class BudgetPanel extends JPanel
 
 	private static final String BUDGET_PANEL_TOOLBAR_NUOVA_SPESA = "BUDGET.PANEL.TOOLBAR.NUOVA.SPESA";
 
+	private static final String BUDGET_PANEL_TOOLBAR_BUTTON_NUOVA_SPESA_TOOLTIP_DISABLED = "BUDGET.PANEL.TOOLBAR.BUTTON.NUOVA.SPESA.TOOLTIP.DISABLED";
+
+	private static final String BUDGET_PANEL_TOOLBAR_BUTTON_NUOVA_ENTRATA_TOOLTIP_DISABLED = "BUDGET.PANEL.TOOLBAR.BUTTON.NUOVA.ENTRATA.TOOLTIP.DISABLED";
+
+	private static final String BUDGET_PANEL_TOOLBAR_BUTTON_NUOVA_SPESA_TOOLTIP_ENABLED = "BUDGET.PANEL.TOOLBAR.BUTTON.NUOVA.SPESA.TOOLTIP.ENABLED";
+
+	private static final String BUDGET_PANEL_TOOLBAR_BUTTON_NUOVA_ENTRATA_TOOLTIP_ENABLED = "BUDGET.PANEL.TOOLBAR.BUTTON.NUOVA.ENTRATA.TOOLTIP.ENABLED";
+
+	private static final String BUDGET_PANEL_TOOLBAR_MODIFICA = "BUDGET.PANEL.TOOLBAR.MODIFICA";
+
+	private static final String BUDGET_PANEL_TOOLBAR_BUTTON_MODIFICA_TOOLTIP_ENABLED = "BUDGET.PANEL.TOOLBAR.BUTTON.MODIFICA.TOOLTIP.ENABLED";
+
 	private Budget budget;
 
 	private JLabel lblBudgetName;
@@ -89,11 +113,28 @@ public class BudgetPanel extends JPanel
 
 	private JSplitPane splitPane;
 
+	private JSplitPane splitPaneVertical;
+
+	private JFrame owner;
+
+	private JButton btnNewButton;
+
+	private JButton btnNuovaSpesa;
+
+	private JLabel lblSaldo;
+
+	private JFreeChart jfc;
+
+	private ChartPanel chartPanel;
+
+	private DefaultPieDataset dataset;
+
 	/**
 	 * Create the panel.
 	 */
-	public BudgetPanel(Budget budget)
+	public BudgetPanel(JFrame owner, Budget budget)
 	{
+		this.owner = owner;
 		setBackground(UIManager.getColor("Panel.background"));
 		this.budget = budget;
 		this.labels = ResourcesBundlesUtil.getLabelsBundles();
@@ -101,16 +142,18 @@ public class BudgetPanel extends JPanel
 
 		splitPane = new JSplitPane();
 		splitPane.setBackground(Color.WHITE);
-		splitPane.setDividerLocation(178);
 		add(splitPane, BorderLayout.CENTER);
 
 		JPanel surround = new JPanel();
 		surround.setLayout(new BoxLayout(surround, BoxLayout.PAGE_AXIS));
-		JPanel panelYearlyBudget = new JPanel();
-		panelYearlyBudget.setBackground(Color.WHITE);
-
-		surround.add(panelYearlyBudget);
 		splitPane.setLeftComponent(surround);
+
+		splitPaneVertical = new JSplitPane();
+		splitPaneVertical.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		surround.add(splitPaneVertical);
+		JPanel panelYearlyBudget = new JPanel();
+		splitPaneVertical.setLeftComponent(panelYearlyBudget);
+		panelYearlyBudget.setBackground(Color.WHITE);
 		panelYearlyBudget.setLayout(new FormLayout(new ColumnSpec[]
 		{ FormFactory.RELATED_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, FormFactory.RELATED_GAP_COLSPEC, FormFactory.DEFAULT_COLSPEC, },
 				new RowSpec[]
@@ -150,7 +193,7 @@ public class BudgetPanel extends JPanel
 		lblSaldoParziale.setFont(FontUtils.getFontForLabel());
 		panelYearlyBudget.add(lblSaldoParziale, "4, 10");
 
-		JLabel lblSaldo = new JLabel(labels.getString(BUDGET_PANEL_LABEL_SALDO));
+		lblSaldo = new JLabel(labels.getString(BUDGET_PANEL_LABEL_SALDO));
 		lblSaldo.setFont(FontUtils.getFontForLabelInsert());
 		lblSaldo.setForeground(FontUtils.getFontColorForLabelInsert());
 		panelYearlyBudget.add(lblSaldo, "2, 14");
@@ -159,6 +202,11 @@ public class BudgetPanel extends JPanel
 
 		labelSaldo.setFont(FontUtils.getFontForLabel());
 		panelYearlyBudget.add(labelSaldo, "4, 14");
+
+		JPanel panelDetails = new JPanel();
+		panelDetails.setBackground(Color.WHITE);
+		splitPaneVertical.setRightComponent(panelDetails);
+		panelDetails.setLayout(new BorderLayout(0, 0));
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBackground(Color.WHITE);
@@ -175,6 +223,8 @@ public class BudgetPanel extends JPanel
 		logger.debug("INCOME COLUMN NAMES " + labels.getString(BUDGET_PANEL_TABLE_INCOME).split(","));
 
 		tableYearlyIncome = new JTable();
+		tableYearlyIncome.setDefaultRenderer(Date.class, new DateCellRenderer());
+		tableYearlyIncome.setDefaultRenderer(BigDecimal.class, new BigDecimalCellRenderer());
 		tableYearlyIncome.setBackground(Color.WHITE);
 		tableYearlyIncome.setModel(new DefaultTableModel(new Object[][]
 		{}, labels.getString(BUDGET_PANEL_TABLE_INCOME).split(","))
@@ -185,7 +235,7 @@ public class BudgetPanel extends JPanel
 			private static final long serialVersionUID = 1L;
 
 			Class<?>[] columnTypes = new Class<?>[]
-			{ Date.class, String.class, String.class, String.class, BigDecimal.class };
+			{ Date.class, String.class, String.class, String.class, BigDecimal.class, String.class };
 
 			public Class<?> getColumnClass(int columnIndex)
 			{
@@ -193,13 +243,16 @@ public class BudgetPanel extends JPanel
 			}
 
 			boolean[] columnEditables = new boolean[]
-			{ false, false, false, false, false };
+			{ false, false, false, false, false, false };
 
 			public boolean isCellEditable(int row, int column)
 			{
 				return columnEditables[column];
 			}
 		});
+		TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tableYearlyIncome.getModel());
+		tableYearlyIncome.setRowSorter(sorter);
+		tableYearlyIncome.getRowSorter().toggleSortOrder(0);
 		tableYearlyIncome.getColumnModel().getColumn(3).setPreferredWidth(150);
 		panelIncome.setLayout(new BorderLayout(0, 0));
 		JScrollPane scrollPaneTableIncome = new JScrollPane(tableYearlyIncome);
@@ -221,6 +274,8 @@ public class BudgetPanel extends JPanel
 		panelExpenses.add(scrollPaneTableExpense, BorderLayout.CENTER);
 
 		tableYearlyExpense = new JTable();
+		tableYearlyExpense.setDefaultRenderer(Date.class, new DateCellRenderer());
+		tableYearlyExpense.setDefaultRenderer(BigDecimal.class, new BigDecimalCellRenderer());
 		tableYearlyExpense.setModel(new DefaultTableModel(new Object[][]
 		{}, labels.getString(BUDGET_PANEL_TABLE_INCOME).split(","))
 		{
@@ -230,7 +285,7 @@ public class BudgetPanel extends JPanel
 			private static final long serialVersionUID = 1L;
 
 			Class<?>[] columnTypes = new Class<?>[]
-			{ Date.class, String.class, String.class, String.class, BigDecimal.class };
+			{ Date.class, String.class, String.class, String.class, BigDecimal.class, String.class };
 
 			public Class<?> getColumnClass(int columnIndex)
 			{
@@ -238,13 +293,16 @@ public class BudgetPanel extends JPanel
 			}
 
 			boolean[] columnEditables = new boolean[]
-			{ false, false, false, false, false };
+			{ false, false, false, false, false, false };
 
 			public boolean isCellEditable(int row, int column)
 			{
 				return columnEditables[column];
 			}
 		});
+		sorter = new TableRowSorter<TableModel>(tableYearlyExpense.getModel());
+		tableYearlyExpense.setRowSorter(sorter);
+		tableYearlyExpense.getRowSorter().toggleSortOrder(0);
 		scrollPaneTableExpense.setViewportView(tableYearlyExpense);
 
 		JLabel lblSpeseAnnualiTableHeader = new JLabel(labels.getString(BUDGET_PANEL_TABLE_HEADER_SPESE_ANNUALI));
@@ -269,35 +327,108 @@ public class BudgetPanel extends JPanel
 		JToolBar toolBar = new JToolBar();
 		add(toolBar, BorderLayout.NORTH);
 
-		JButton btnNewButton = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_NUOVA_ENTRATA), new ImageIcon(
+		btnNewButton = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_NUOVA_ENTRATA), new ImageIcon(
 				BudgetPanel.class.getResource("/images/euro.png")));
+		btnNewButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				showNewIcomesDialog();
+			}
+		});
 		Font font = new Font(btnNewButton.getFont().getFontName(), Font.BOLD, btnNewButton.getFont().getSize());
 		btnNewButton.setFont(font);
 		toolBar.add(btnNewButton);
 
-		JButton btnNuovaSpesa = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_NUOVA_SPESA), new ImageIcon(
+		btnNuovaSpesa = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_NUOVA_SPESA), new ImageIcon(
 				BudgetPanel.class.getResource("/images/expense.png")));
 		btnNuovaSpesa.setFont(font);
+		btnNuovaSpesa.addActionListener(new ActionListener()
+		{
+
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				showNewExpenseDialog();
+			}
+		});
 		toolBar.add(btnNuovaSpesa);
+		toolBar.addSeparator();
+
+		JButton btnModifica = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_MODIFICA), new ImageIcon(
+				BudgetPanel.class.getResource("/images/modify.png")));
+		btnModifica.setFont(font);
+		btnModifica.setToolTipText(labels.getString(BUDGET_PANEL_TOOLBAR_BUTTON_MODIFICA_TOOLTIP_ENABLED));
+		toolBar.add(btnModifica);
+		this.dataset = new DefaultPieDataset();
+		this.jfc = ChartFactory.createPieChart3D("Budget Annuale", dataset, true, true, false);
+		chartPanel = new ChartPanel(jfc);
+		chartPanel.setPreferredSize(new Dimension(400, 400));
+		panelDetails.add(chartPanel);
 		if (this.budget != null)
 		{
 			this.calculate();
 			this.populateTableIncome();
 			this.populateTableExpense();
 		}
-
+		this.checkToolbarButton();
 	}
 
-	private void populateTableExpense()
+	private void checkToolbarButton()
+	{
+		if (budget != null)
+		{
+			btnNewButton.setEnabled(true);
+			btnNewButton.setToolTipText(labels.getString(BUDGET_PANEL_TOOLBAR_BUTTON_NUOVA_ENTRATA_TOOLTIP_ENABLED));
+			btnNuovaSpesa.setEnabled(true);
+			btnNuovaSpesa.setToolTipText(labels.getString(BUDGET_PANEL_TOOLBAR_BUTTON_NUOVA_SPESA_TOOLTIP_ENABLED));
+		}
+		else
+		{
+			btnNewButton.setEnabled(false);
+			btnNewButton.setToolTipText(labels.getString(BUDGET_PANEL_TOOLBAR_BUTTON_NUOVA_ENTRATA_TOOLTIP_DISABLED));
+			btnNuovaSpesa.setEnabled(false);
+			btnNuovaSpesa.setToolTipText(labels.getString(BUDGET_PANEL_TOOLBAR_BUTTON_NUOVA_SPESA_TOOLTIP_DISABLED));
+		}
+	}
+
+	protected void showNewIcomesDialog()
+	{
+		BudgetEntryDialog budgetEntryDialog = new BudgetEntryDialog(owner, budget, null, true);
+		budgetEntryDialog.setVisible(true);
+		if (budgetEntryDialog.isUpdateViews())
+		{
+			this.populateTableIncome();
+			this.calculate();
+			this.getSplitPane().resetToPreferredSizes();
+			this.getSplitPaneVertical().resetToPreferredSizes();
+		}
+	}
+
+	protected void showNewExpenseDialog()
+	{
+		BudgetEntryDialog budgetEntryDialog = new BudgetEntryDialog(owner, budget, null, false);
+		budgetEntryDialog.setVisible(true);
+		if (budgetEntryDialog.isUpdateViews())
+		{
+			this.populateTableExpense();
+			this.calculate();
+			this.getSplitPane().resetToPreferredSizes();
+			this.getSplitPaneVertical().resetToPreferredSizes();
+		}
+	}
+
+	public void populateTableExpense()
 	{
 		DefaultTableModel model = (DefaultTableModel) this.tableYearlyExpense.getModel();
 		BudgetEntryDao budgetDao = new BudgetEntryDao();
-		List<BudgetEntry> budgets = budgetDao.getExpenses(budget);
-		for (BudgetEntry budgetEntry : budgets)
+		List<BudgetEntryView> budgets = budgetDao.getExpenses(budget);
+		for (BudgetEntryView budgetEntry : budgets)
 		{
 			model.addRow(new Object[]
 			{ budgetEntry.getDate(), budgetEntry.getCategory().getName(),
-					budgetEntry.getSubCategory() != null ? budgetEntry.getSubCategory().getName() : null, budgetEntry.getValue() });
+					budgetEntry.getSubCategory() != null ? budgetEntry.getSubCategory().getName() : null, budgetEntry.getNote(),
+					budgetEntry.getValue(), budgetEntry.getRecurrence() });
 		}
 	}
 
@@ -305,22 +436,24 @@ public class BudgetPanel extends JPanel
 	{
 		DefaultTableModel model = (DefaultTableModel) this.tableYearlyIncome.getModel();
 		BudgetEntryDao budgetDao = new BudgetEntryDao();
-		List<BudgetEntry> budgets = budgetDao.getIncomes(budget);
-		for (BudgetEntry budgetEntry : budgets)
+		List<BudgetEntryView> budgets = budgetDao.getIncomes(budget);
+		for (BudgetEntryView budgetEntry : budgets)
 		{
 			model.addRow(new Object[]
 			{ budgetEntry.getDate(), budgetEntry.getCategory().getName(),
-					budgetEntry.getSubCategory() != null ? budgetEntry.getSubCategory().getName() : null, budgetEntry.getValue() });
+					budgetEntry.getSubCategory() != null ? budgetEntry.getSubCategory().getName() : null, budgetEntry.getNote(),
+					budgetEntry.getValue(), budgetEntry.getRecurrence() });
 		}
 	}
 
 	private void calculate()
 	{
+		dataset.clear();
 		lblBudgetName.setText(budget.getName());
+		NumberFormat format = NumberFormat.getCurrencyInstance();
 		labelEntrateAnnuali.setText(this.calculateEntrateAnnuali());
 		labelSpeseAnnuali.setText(this.calculateSpeseAnnuali());
 		BigDecimal saldo = this.calculateSaldoParziale();
-		NumberFormat format = NumberFormat.getCurrencyInstance();
 		format.setMaximumFractionDigits(3);
 		lblSaldoParziale.setText(format.format(saldo));
 		if (saldo.signum() == -1)
@@ -331,7 +464,8 @@ public class BudgetPanel extends JPanel
 		{
 			lblSaldoParziale.setForeground(Color.green);
 		}
-		labelSaldo.setText(format.format(budget.getSaldo()));
+		saldo = budget.getSaldo().add(saldo);
+		labelSaldo.setText(format.format(saldo));
 		if (budget.getSaldo().signum() == -1)
 		{
 			labelSaldo.setForeground(Color.red);
@@ -339,6 +473,16 @@ public class BudgetPanel extends JPanel
 		else
 		{
 			labelSaldo.setForeground(Color.green);
+		}
+		try
+		{
+			dataset.setValue("Income", format.parse(labelEntrateAnnuali.getText()));
+			dataset.setValue("Expense", format.parse(labelSpeseAnnuali.getText()));
+		}
+		catch (ParseException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -389,11 +533,19 @@ public class BudgetPanel extends JPanel
 			this.calculate();
 			this.populateTableIncome();
 			this.populateTableExpense();
+			this.checkToolbarButton();
+			this.getSplitPane().resetToPreferredSizes();
+			this.getSplitPaneVertical().resetToPreferredSizes();
 		}
 	}
 
 	public JSplitPane getSplitPane()
 	{
 		return splitPane;
+	}
+
+	public JSplitPane getSplitPaneVertical()
+	{
+		return splitPaneVertical;
 	}
 }

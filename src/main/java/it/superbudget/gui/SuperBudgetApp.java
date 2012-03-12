@@ -110,7 +110,7 @@ public class SuperBudgetApp
 		mnBudget.add(mnAvaiable);
 
 		this.createBudgetMenu();
-		budgetPanel = new BudgetPanel(getSelectedBudget());
+		budgetPanel = new BudgetPanel(this.frame, getSelectedBudget());
 		this.frame.add(budgetPanel);
 		mnBudget.add(mntmNuovo);
 

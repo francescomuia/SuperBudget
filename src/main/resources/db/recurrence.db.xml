@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<dataset>
+
+	<recurrence recurrenceId="1"  name="nessuna" />
+	<recurrence recurrenceId="2"  name="Annuale" />
+	<recurrence recurrenceId="3" name="Mensile" />
+	<recurrence recurrenceId="4" name="Giornaliera" />
+	<recurrence recurrenceId="5" name="Settimanale" />
+	<recurrence recurrenceId="6" name="Bisettimanale" />
+	<recurrence recurrenceId="7" name="Trimestrale" />
+	<recurrence recurrenceId="8" name="Weekends" />
+
+</dataset>

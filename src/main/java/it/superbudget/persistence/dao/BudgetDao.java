@@ -1,7 +1,10 @@
 package it.superbudget.persistence.dao;
 
+import it.superbudget.enums.BudgetEntryTypes;
 import it.superbudget.persistence.PersistenceManager;
 import it.superbudget.persistence.entities.Budget;
+import it.superbudget.persistence.entities.BudgetEntryView;
+import it.superbudget.util.calendars.CalendarsUtils;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -34,13 +37,34 @@ public class BudgetDao
 
 	public BigDecimal getYearlyIncome(Budget budget)
 	{
-		return new BigDecimal(0.0);
+		BudgetEntryDao budgetEntryDao = new BudgetEntryDao();
+		List<BudgetEntryView> budgetEntryViews = budgetEntryDao.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.INCOME,
+				CalendarsUtils.getInitCurrentYear(), CalendarsUtils.getFinishCurrentYear());
+		BigDecimal sums = new BigDecimal(0.0);
+		for (BudgetEntryView budgetEntryView : budgetEntryViews)
+		{
+			sums = sums.add(budgetEntryView.getValue());
+		}
+		return sums;
 	}
 
 	public BigDecimal getYearlyExpense(Budget budget)
 	{
-		// TODO Auto-generated method stub
-		return new BigDecimal(0.0);
+		BudgetEntryDao budgetEntryDao = new BudgetEntryDao();
+		List<BudgetEntryView> budgetEntryViews = budgetEntryDao.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.EXPENSE,
+				CalendarsUtils.getInitCurrentYear(), CalendarsUtils.getFinishCurrentYear());
+		BigDecimal sums = new BigDecimal(0.0);
+		for (BudgetEntryView budgetEntryView : budgetEntryViews)
+		{
+			sums = sums.add(budgetEntryView.getValue());
+		}
+		return sums;
 	}
 
+	public static void main(String[] args)
+	{
+		Budget budget = new Budget();
+		budget.setBudgetId(1L);
+		System.out.println(new BudgetDao().getYearlyExpense(budget));
+	}
 }

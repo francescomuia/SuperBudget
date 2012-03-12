@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<dataset>
-
-	<occurs  name="Anno" />
-	<occurs name="Mese" />
-	<occurs name="Giorno" />
-
-</dataset>

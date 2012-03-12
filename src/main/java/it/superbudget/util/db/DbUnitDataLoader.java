@@ -30,10 +30,9 @@ public class DbUnitDataLoader
 	 * 
 	 * @throws Exception
 	 */
-	public void populateTestData() throws Exception
+	public void populateData() throws Exception
 	{
 		FlatXmlDataSet dataSet = new FlatXmlDataSet(testData);
-
 		IDatabaseConnection con = new DatabaseConnection(connection);
 
 		DatabaseOperation.CLEAN_INSERT.execute(con, dataSet);
