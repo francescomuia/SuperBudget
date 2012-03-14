@@ -23,14 +23,14 @@ public class BudgetEntryDao
 
 	public List<BudgetEntryView> getIncomes(Budget budget)
 	{
-		return this.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.INCOME, CalendarsUtils.getInitCurrentYear(),
-				CalendarsUtils.getFinishCurrentYear());
+		return this.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.INCOME, CalendarsUtils.getSqlInitCurrentYear(),
+				CalendarsUtils.getSqlFinishCurrentYear());
 	}
 
 	public List<BudgetEntryView> getExpenses(Budget budget)
 	{
-		return this.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.EXPENSE, CalendarsUtils.getInitCurrentYear(),
-				CalendarsUtils.getFinishCurrentYear());
+		return this.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.EXPENSE, CalendarsUtils.getSqlInitCurrentYear(),
+				CalendarsUtils.getSqlFinishCurrentYear());
 	}
 
 	public List<BudgetEntryView> getBudgetEntry(Long budgetId, BudgetEntryTypes type, Date startDate, Date endDate)
@@ -77,5 +77,10 @@ public class BudgetEntryDao
 		c.add(Calendar.MONTH, 1);
 		System.out.println(new BudgetEntryDao().getBudgetEntry(1L, BudgetEntryTypes.INCOME, new java.sql.Date(System.currentTimeMillis()),
 				new java.sql.Date(c.getTimeInMillis())));
+	}
+
+	public BudgetEntry findBudgetEntry(Long budgetEntryId)
+	{
+		return PersistenceManager.getInstance().getEntityManager().find(BudgetEntry.class, budgetEntryId);
 	}
 }

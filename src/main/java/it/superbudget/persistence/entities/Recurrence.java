@@ -8,7 +8,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @NamedQueries(value =
-{ @NamedQuery(name = "findAllRecurrences", query = "Select t from Recurrence t order by t.recurrenceId") })
+{
+		@NamedQuery(name = "findAllRecurrences", query = "Select t from Recurrence t order by t.recurrenceId"),
+		@NamedQuery(name = "getRecurrenceForBudgetEntryDialog", query = "Select t from Recurrence t where t.recurrenceId <> 1 order by t.recurrenceId") })
 @Entity
 public class Recurrence implements Serializable
 {

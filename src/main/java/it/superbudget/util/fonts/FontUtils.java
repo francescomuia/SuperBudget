@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.SystemColor;
 
+import javax.swing.JLabel;
+
 public class FontUtils
 {
 	public static Font getFontForLabelInsert()
@@ -31,4 +33,11 @@ public class FontUtils
 		return Color.RED;
 	}
 
+	public static JLabel getJlabelInsert(String text)
+	{
+		JLabel label = new JLabel(text);
+		label.setFont(getFontForLabelInsert());
+		label.setForeground(getFontColorForLabelInsert());
+		return label;
+	}
 }

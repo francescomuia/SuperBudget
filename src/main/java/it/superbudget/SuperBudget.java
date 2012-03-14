@@ -27,6 +27,7 @@ public class SuperBudget
 {
 	private static boolean getMonitoredVMs(int processPid)
 	{
+
 		MonitoredHost host;
 		Set<?> vms;
 		try

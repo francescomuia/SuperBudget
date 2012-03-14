@@ -19,4 +19,9 @@ public class RecurrenceDao
 		return PersistenceManager.getInstance().getEntityManager().find(Recurrence.class, 1L);
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Recurrence> getRecurrenceForBudgetEntryDialog()
+	{
+		return PersistenceManager.getInstance().getEntityManager().createNamedQuery("getRecurrenceForBudgetEntryDialog").getResultList();
+	}
 }

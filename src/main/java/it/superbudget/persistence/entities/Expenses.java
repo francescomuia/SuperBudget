@@ -11,10 +11,10 @@ import javax.persistence.Entity;
 public class Expenses extends BudgetEntry
 {
 
-	public Expenses(BigDecimal value, Category category, SubCategory subCategory, Date date, Budget budget, Integer recurrenceValue, String note,
-			Recurrence recurrence)
+	public Expenses(BigDecimal value, Category category, SubCategory subCategory, Date dateFrom, Date dateTo, Budget budget, Integer recurrenceValue,
+			String note, Recurrence recurrence)
 	{
-		super(value, category, subCategory, date, budget, recurrenceValue, note, recurrence);
+		super(value, category, subCategory, dateFrom, dateTo, budget, recurrenceValue, note, recurrence);
 		// TODO Auto-generated constructor stub
 	}
 

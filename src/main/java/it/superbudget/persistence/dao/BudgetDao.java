@@ -39,7 +39,7 @@ public class BudgetDao
 	{
 		BudgetEntryDao budgetEntryDao = new BudgetEntryDao();
 		List<BudgetEntryView> budgetEntryViews = budgetEntryDao.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.INCOME,
-				CalendarsUtils.getInitCurrentYear(), CalendarsUtils.getFinishCurrentYear());
+				CalendarsUtils.getSqlInitCurrentYear(), CalendarsUtils.getSqlFinishCurrentYear());
 		BigDecimal sums = new BigDecimal(0.0);
 		for (BudgetEntryView budgetEntryView : budgetEntryViews)
 		{
@@ -52,7 +52,7 @@ public class BudgetDao
 	{
 		BudgetEntryDao budgetEntryDao = new BudgetEntryDao();
 		List<BudgetEntryView> budgetEntryViews = budgetEntryDao.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.EXPENSE,
-				CalendarsUtils.getInitCurrentYear(), CalendarsUtils.getFinishCurrentYear());
+				CalendarsUtils.getSqlInitCurrentYear(), CalendarsUtils.getSqlFinishCurrentYear());
 		BigDecimal sums = new BigDecimal(0.0);
 		for (BudgetEntryView budgetEntryView : budgetEntryViews)
 		{

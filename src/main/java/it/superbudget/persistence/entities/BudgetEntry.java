@@ -22,9 +22,8 @@ import javax.persistence.TemporalType;
 @NamedQueries(value =
 {
 
-@NamedQuery(name = "getBudgetIncome", query = "Select t From Income t where t.budget =:budget order by t.date"),
-		@NamedQuery(name = "getBudgetExpenses", query = "Select t From Income t where t.budget =:budget order by t.date"),
-		@NamedQuery(name = "getYearlyBudgetIncome", query = "Select t From Income t where t.budget =:budget AND t.date between :first AND :last") })
+@NamedQuery(name = "getBudgetIncome", query = "Select t From Income t where t.budget =:budget order by t.dateFrom"),
+		@NamedQuery(name = "getBudgetExpenses", query = "Select t From Income t where t.budget =:budget order by t.dateFrom") })
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.CHAR)
@@ -48,7 +47,10 @@ public abstract class BudgetEntry implements Serializable
 	private SubCategory subCategory;
 
 	@Temporal(TemporalType.DATE)
-	private Date date;
+	private Date dateFrom;
+
+	@Temporal(TemporalType.DATE)
+	private Date dateTo;
 
 	@ManyToOne
 	private Budget budget;
@@ -65,13 +67,14 @@ public abstract class BudgetEntry implements Serializable
 
 	}
 
-	public BudgetEntry(BigDecimal value, Category category, SubCategory subCategory, Date date, Budget budget, Integer recurrenceValue, String note,
-			Recurrence recurrence)
+	public BudgetEntry(BigDecimal value, Category category, SubCategory subCategory, Date dateFrom, Date dateTo, Budget budget,
+			Integer recurrenceValue, String note, Recurrence recurrence)
 	{
 		this.value = value;
 		this.category = category;
 		this.subCategory = subCategory;
-		this.date = date;
+		this.dateFrom = dateFrom;
+		this.dateTo = dateTo;
 		this.budget = budget;
 		this.recurrenceValue = recurrenceValue;
 		this.note = note;
@@ -108,14 +111,14 @@ public abstract class BudgetEntry implements Serializable
 		this.category = category;
 	}
 
-	public Date getDate()
+	public Date getDateFrom()
 	{
-		return date;
+		return dateFrom;
 	}
 
-	public void setDate(Date date)
+	public void setDateFrom(Date date)
 	{
-		this.date = date;
+		this.dateFrom = date;
 	}
 
 	@Override
@@ -195,6 +198,16 @@ public abstract class BudgetEntry implements Serializable
 	public void setRecurrence(Recurrence recurrence)
 	{
 		this.recurrence = recurrence;
+	}
+
+	public Date getDateTo()
+	{
+		return dateTo;
+	}
+
+	public void setDateTo(Date dateTo)
+	{
+		this.dateTo = dateTo;
 	}
 
 }

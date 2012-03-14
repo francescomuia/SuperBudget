@@ -5,6 +5,7 @@ import it.superbudget.gui.jtable.DateCellRenderer;
 import it.superbudget.persistence.dao.BudgetDao;
 import it.superbudget.persistence.dao.BudgetEntryDao;
 import it.superbudget.persistence.entities.Budget;
+import it.superbudget.persistence.entities.BudgetEntry;
 import it.superbudget.persistence.entities.BudgetEntryView;
 import it.superbudget.util.bundles.ResourcesBundlesUtil;
 import it.superbudget.util.fonts.FontUtils;
@@ -217,10 +218,13 @@ public class BudgetPanel extends JPanel
 		tabbedPane.addTab("Anno", null, panelAnno, null);
 		panelAnno.setLayout(new GridLayout(2, 0, 0, 0));
 
+		JPanel panel_3 = new JPanel();
+		panelAnno.add(panel_3);
+		panel_3.setLayout(new BorderLayout(0, 0));
+
 		JPanel panelIncome = new JPanel();
+		panel_3.add(panelIncome);
 		panelIncome.setBackground(Color.WHITE);
-		panelAnno.add(panelIncome);
-		logger.debug("INCOME COLUMN NAMES " + labels.getString(BUDGET_PANEL_TABLE_INCOME).split(","));
 
 		tableYearlyIncome = new JTable();
 		tableYearlyIncome.setDefaultRenderer(Date.class, new DateCellRenderer());
@@ -230,12 +234,12 @@ public class BudgetPanel extends JPanel
 		{}, labels.getString(BUDGET_PANEL_TABLE_INCOME).split(","))
 		{
 			/**
-					 * 
-					 */
+							 * 
+							 */
 			private static final long serialVersionUID = 1L;
 
 			Class<?>[] columnTypes = new Class<?>[]
-			{ Date.class, String.class, String.class, String.class, BigDecimal.class, String.class };
+			{ Integer.class, Integer.class, Date.class, String.class, String.class, String.class, BigDecimal.class, String.class };
 
 			public Class<?> getColumnClass(int columnIndex)
 			{
@@ -243,7 +247,7 @@ public class BudgetPanel extends JPanel
 			}
 
 			boolean[] columnEditables = new boolean[]
-			{ false, false, false, false, false, false };
+			{ false, false, false, false, false, false, false, false };
 
 			public boolean isCellEditable(int row, int column)
 			{
@@ -252,7 +256,7 @@ public class BudgetPanel extends JPanel
 		});
 		TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tableYearlyIncome.getModel());
 		tableYearlyIncome.setRowSorter(sorter);
-		tableYearlyIncome.getRowSorter().toggleSortOrder(0);
+		tableYearlyIncome.getRowSorter().toggleSortOrder(2);
 		tableYearlyIncome.getColumnModel().getColumn(3).setPreferredWidth(150);
 		panelIncome.setLayout(new BorderLayout(0, 0));
 		JScrollPane scrollPaneTableIncome = new JScrollPane(tableYearlyIncome);
@@ -264,9 +268,16 @@ public class BudgetPanel extends JPanel
 		lblEntrateAnnualiTableHeader.setForeground(FontUtils.getFontColorForLabelInsert());
 		panelIncome.add(lblEntrateAnnualiTableHeader, BorderLayout.NORTH);
 
+		JToolBar toolBarIncomes = new JToolBar();
+		panel_3.add(toolBarIncomes, BorderLayout.NORTH);
+
+		JPanel panel_4 = new JPanel();
+		panelAnno.add(panel_4);
+		panel_4.setLayout(new BorderLayout(0, 0));
+
 		JPanel panelExpenses = new JPanel();
+		panel_4.add(panelExpenses);
 		panelExpenses.setBackground(Color.WHITE);
-		panelAnno.add(panelExpenses);
 		panelExpenses.setLayout(new BorderLayout(0, 0));
 
 		JScrollPane scrollPaneTableExpense = new JScrollPane();
@@ -285,7 +296,7 @@ public class BudgetPanel extends JPanel
 			private static final long serialVersionUID = 1L;
 
 			Class<?>[] columnTypes = new Class<?>[]
-			{ Date.class, String.class, String.class, String.class, BigDecimal.class, String.class };
+			{ Integer.class, Integer.class, Date.class, String.class, String.class, String.class, BigDecimal.class, String.class };
 
 			public Class<?> getColumnClass(int columnIndex)
 			{
@@ -293,7 +304,7 @@ public class BudgetPanel extends JPanel
 			}
 
 			boolean[] columnEditables = new boolean[]
-			{ false, false, false, false, false, false };
+			{ false, false, false, false, false, false, false, false };
 
 			public boolean isCellEditable(int row, int column)
 			{
@@ -302,7 +313,7 @@ public class BudgetPanel extends JPanel
 		});
 		sorter = new TableRowSorter<TableModel>(tableYearlyExpense.getModel());
 		tableYearlyExpense.setRowSorter(sorter);
-		tableYearlyExpense.getRowSorter().toggleSortOrder(0);
+		tableYearlyExpense.getRowSorter().toggleSortOrder(2);
 		scrollPaneTableExpense.setViewportView(tableYearlyExpense);
 
 		JLabel lblSpeseAnnualiTableHeader = new JLabel(labels.getString(BUDGET_PANEL_TABLE_HEADER_SPESE_ANNUALI));
@@ -310,6 +321,9 @@ public class BudgetPanel extends JPanel
 
 		lblSpeseAnnualiTableHeader.setFont(FontUtils.getFontForLabelInsert());
 		lblSpeseAnnualiTableHeader.setForeground(FontUtils.getFontColorForLabelInsert());
+
+		JToolBar toolBarExpense = new JToolBar();
+		panel_4.add(toolBarExpense, BorderLayout.NORTH);
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
@@ -353,13 +367,27 @@ public class BudgetPanel extends JPanel
 			}
 		});
 		toolBar.add(btnNuovaSpesa);
-		toolBar.addSeparator();
 
-		JButton btnModifica = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_MODIFICA), new ImageIcon(
+		JButton btnModificaIncome = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_MODIFICA), new ImageIcon(
 				BudgetPanel.class.getResource("/images/modify.png")));
-		btnModifica.setFont(font);
-		btnModifica.setToolTipText(labels.getString(BUDGET_PANEL_TOOLBAR_BUTTON_MODIFICA_TOOLTIP_ENABLED));
-		toolBar.add(btnModifica);
+		btnModificaIncome.setFont(font);
+		btnModificaIncome.setToolTipText(labels.getString(BUDGET_PANEL_TOOLBAR_BUTTON_MODIFICA_TOOLTIP_ENABLED));
+		btnModificaIncome.addActionListener(new ActionListener()
+		{
+
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				showEditIncomeDialog();
+			}
+		});
+		toolBarIncomes.add(btnModificaIncome);
+
+		JButton buttonModificaExpense = new JButton(labels.getString(BUDGET_PANEL_TOOLBAR_MODIFICA), new ImageIcon(
+				BudgetPanel.class.getResource("/images/modify.png")));
+		btnModificaIncome.setToolTipText(labels.getString(BUDGET_PANEL_TOOLBAR_BUTTON_MODIFICA_TOOLTIP_ENABLED));
+		toolBarExpense.add(buttonModificaExpense);
+
 		this.dataset = new DefaultPieDataset();
 		this.jfc = ChartFactory.createPieChart3D("Budget Annuale", dataset, true, true, false);
 		chartPanel = new ChartPanel(jfc);
@@ -392,6 +420,23 @@ public class BudgetPanel extends JPanel
 		}
 	}
 
+	protected void showEditIncomeDialog()
+	{
+		if (this.tableYearlyIncome.getSelectedRow() != -1)
+		{
+			BudgetEntryDialog budgetEntryDialog = new BudgetEntryDialog(owner, budget, this.getSelectedIncome(), true);
+			budgetEntryDialog.setVisible(true);
+		}
+	}
+
+	private BudgetEntry getSelectedIncome()
+	{
+		int row = tableYearlyIncome.getSelectedRow();
+		Long budgetEntryId = new Long(tableYearlyIncome.getModel().getValueAt(row, 1).toString());
+		BudgetEntry budgetEntry = new BudgetEntryDao().findBudgetEntry(budgetEntryId);
+		return budgetEntry;
+	}
+
 	protected void showNewIcomesDialog()
 	{
 		BudgetEntryDialog budgetEntryDialog = new BudgetEntryDialog(owner, budget, null, true);
@@ -421,12 +466,13 @@ public class BudgetPanel extends JPanel
 	public void populateTableExpense()
 	{
 		DefaultTableModel model = (DefaultTableModel) this.tableYearlyExpense.getModel();
+		model.setRowCount(0);
 		BudgetEntryDao budgetDao = new BudgetEntryDao();
 		List<BudgetEntryView> budgets = budgetDao.getExpenses(budget);
 		for (BudgetEntryView budgetEntry : budgets)
 		{
 			model.addRow(new Object[]
-			{ budgetEntry.getDate(), budgetEntry.getCategory().getName(),
+			{ budgetEntry.getBudgetEntryViewId(), budgetEntry.getBudgetEntryId(), budgetEntry.getDate(), budgetEntry.getCategory().getName(),
 					budgetEntry.getSubCategory() != null ? budgetEntry.getSubCategory().getName() : null, budgetEntry.getNote(),
 					budgetEntry.getValue(), budgetEntry.getRecurrence() });
 		}
@@ -435,12 +481,13 @@ public class BudgetPanel extends JPanel
 	public void populateTableIncome()
 	{
 		DefaultTableModel model = (DefaultTableModel) this.tableYearlyIncome.getModel();
+		model.setRowCount(0);
 		BudgetEntryDao budgetDao = new BudgetEntryDao();
 		List<BudgetEntryView> budgets = budgetDao.getIncomes(budget);
 		for (BudgetEntryView budgetEntry : budgets)
 		{
 			model.addRow(new Object[]
-			{ budgetEntry.getDate(), budgetEntry.getCategory().getName(),
+			{ budgetEntry.getBudgetEntryViewId(), budgetEntry.getBudgetEntryId(), budgetEntry.getDate(), budgetEntry.getCategory().getName(),
 					budgetEntry.getSubCategory() != null ? budgetEntry.getSubCategory().getName() : null, budgetEntry.getNote(),
 					budgetEntry.getValue(), budgetEntry.getRecurrence() });
 		}

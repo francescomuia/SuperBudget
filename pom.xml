@@ -49,6 +49,11 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 			</resource>
+			<resource>
+				<directory>src/main/resources/META-INF</directory>
+				<filtering>true</filtering>
+			</resource>
+
 		</resources>
 
 		<plugins>
@@ -129,18 +134,9 @@
 				</configuration>
 			</plugin>
 
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.7</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-javadoc-plugin</artifactId> 
+				<version>2.7</version> <executions> <execution> <goals> <goal>jar</goal> 
+				</goals> </execution> </executions> </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -230,7 +226,7 @@
 					</execution>
 				</executions>
 			</plugin>
-		
+
 		</plugins>
 	</build>
 
@@ -302,6 +298,22 @@
 			<artifactId>jfreechart</artifactId>
 			<version>1.0.14</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<version>10.8.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.api.v2</groupId>
+			<artifactId>github-java-sdk</artifactId>
+			<version>0.1</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>1.4</version>
+		</dependency>
 	</dependencies>
 	<distributionManagement>
 		<repository>
@@ -321,6 +333,11 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+
+		<repository>
+			<id>patrick.wagstrom</id>
+			<url>http://patrick.wagstrom.net/maven/external_free/</url>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -328,4 +345,20 @@
 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 		</pluginRepository>
 	</pluginRepositories>
+	<profiles>
+		<profile>
+			<id>development</id>
+			<properties>
+				<db.driverClass>org.apache.derby.jdbc.ClientDriver</db.driverClass>
+				<db.connectionURL>jdbc:derby://localhost:1527/C:\Users\muia\workspace\programmi\superbudget\database</db.connectionURL>
+			</properties>
+		</profile>
+		<profile>
+			<id>production</id>
+			<properties>
+				<db.driverClass>org.apache.derby.jdbc.EmbeddedDriver</db.driverClass>
+				<db.connectionURL>jdbc:derby:./database;create=true</db.connectionURL>
+			</properties>
+		</profile>
+	</profiles>
 </project>
