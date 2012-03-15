@@ -84,6 +84,7 @@ public class SuperBudget
 
 	public static void main(String[] args) throws Exception
 	{
+
 		RuntimeMXBean runtimeMXBean = ManagementFactory.getRuntimeMXBean();
 		final int runtimePid = Integer.parseInt(runtimeMXBean.getName().substring(0, runtimeMXBean.getName().indexOf("@")));
 		if (!SuperBudget.getMonitoredVMs(runtimePid))

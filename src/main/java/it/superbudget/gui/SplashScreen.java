@@ -1,16 +1,21 @@
 package it.superbudget.gui;
 
+import it.superbudget.GitHubVersionChecker;
 import it.superbudget.SuperBudget;
 import it.superbudget.persistence.PersistenceManager;
+import it.superbudget.util.bundles.ResourcesBundlesUtil;
 import it.superbudget.util.messages.MessagesUtils;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
@@ -30,6 +35,10 @@ public class SplashScreen extends JDialog
 
 	private SwingWorker<Void, SimpleEntry<String, Integer>> worker;
 
+	private JPanel panelLogo;
+
+	private JLabel lblVersion;
+
 	public SplashScreen()
 	{
 		setUndecorated(true);
@@ -42,9 +51,6 @@ public class SplashScreen extends JDialog
 
 	private void initializeComponents()
 	{
-		JLabel label = new JLabel();
-		label.setIcon(new ImageIcon(SplashScreen.class.getResource("/images/logo.png")));
-		getContentPane().add(label, BorderLayout.CENTER);
 
 		JPanel panel = new JPanel();
 		getContentPane().add(panel, BorderLayout.SOUTH);
@@ -56,6 +62,21 @@ public class SplashScreen extends JDialog
 
 		progressBar = new JProgressBar();
 		panel.add(progressBar, BorderLayout.CENTER);
+
+		panelLogo = new JPanel();
+		getContentPane().add(panelLogo, BorderLayout.CENTER);
+		panelLogo.setLayout(new BorderLayout(0, 0));
+		JLabel label = new JLabel();
+
+		panelLogo.add(label, BorderLayout.CENTER);
+		label.setIcon(new ImageIcon(SplashScreen.class.getResource("/images/logo.png")));
+
+		lblVersion = new JLabel("VER. " + ResourcesBundlesUtil.getApplicationVersion());
+		lblVersion.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblVersion.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblVersion.setForeground(new Color(2, 151, 236));
+		lblVersion.setHorizontalAlignment(SwingConstants.RIGHT);
+		panelLogo.add(lblVersion, BorderLayout.SOUTH);
 	}
 
 	class SplashScreenTask extends SwingWorker<Void, SimpleEntry<String, Integer>>
@@ -67,6 +88,32 @@ public class SplashScreen extends JDialog
 			DOMConfigurator.configure(SuperBudget.class.getResource("/log4j.xml"));
 			Logger logger = Logger.getLogger(SuperBudget.class);
 			logger.info("Logging started");
+		}
+
+		public void checkApplicationVersion()
+		{
+			try
+			{
+				if (!GitHubVersionChecker.isUpToDate(ResourcesBundlesUtil.getApplicationVersion()))
+				{
+					int choose = JOptionPane.showConfirmDialog(rootPane,
+							"<html>Esiste una nuova versione dell'applicativo.<br/>Procedere con l'aggiornamento ? </html>", "Super Budget",
+							JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+					if (choose == JOptionPane.YES_OPTION)
+					{
+						System.out.println(getClass().getResource("downloaderVer.properties"));
+						System.out.println(getClass().getResource("/downloaderVer.properties"));
+						System.out.println(getClass().getResource("./downloaderVer.properties"));
+						System.exit(-1);
+					}
+				}
+			}
+			catch (RuntimeException e)
+			{
+				Logger logger = Logger.getLogger(SplashScreenTask.class);
+				logger.error("Tentativo di controllo versione fallito", e);
+			}
+
 		}
 
 		public void startPersistenceContext()
@@ -121,6 +168,9 @@ public class SplashScreen extends JDialog
 				publish(new SimpleEntry<String, Integer>("Starting Logging System...", new Integer(0)));
 				this.enableLoggingSystem();
 				publish(new SimpleEntry<String, Integer>("Logging System Started", new Integer(10)));
+				publish(new SimpleEntry<String, Integer>("Check application Version", new Integer(10)));
+				checkApplicationVersion();
+
 				publish(new SimpleEntry<String, Integer>("Starting Persistence Context...", new Integer(10)));
 				startPersistenceContext();
 				publish(new SimpleEntry<String, Integer>("Persistence Context Started", new Integer(30)));

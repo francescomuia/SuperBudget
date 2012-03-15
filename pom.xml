@@ -12,6 +12,7 @@
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<release.dir>/C:/Users/muia/workspace/programmi/SuperBudget/release</release.dir>
 		<snapshot.dir>/C:/Users/muia/workspace/programmi/SuperBudget/snapshot</snapshot.dir>
+		<release.zip>/C:/Users/muia/workspace/programmi/SuperBudget/download</release.zip>
 	</properties>
 
 	<issueManagement>
@@ -170,7 +171,7 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.5</version>
 				<configuration>
-					<message>Creating site for ${project.version}</message>
+					<message>Creating site for ${project.artifactId} ${project.version}</message>
 					<userName>francescomuia</userName>
 					<password>tiamobibi83</password>
 				</configuration>
@@ -227,6 +228,25 @@
 				</executions>
 			</plugin>
 
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-5</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/zip.xml</descriptor>
+					</descriptors>
+					<outputDirectory>${release.zip}</outputDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- append to the packaging phase. -->
+						<goals>
+							<goal>single</goal> <!-- goals == mojos -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -242,11 +262,6 @@
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.dbunit</groupId>
-			<artifactId>dbunit</artifactId>
-			<version>2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
@@ -313,6 +328,11 @@
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>myapps</groupId>
+			<artifactId>GitHubSuperBudgetDownloader</artifactId>
+			<version>0.1</version>
 		</dependency>
 	</dependencies>
 	<distributionManagement>
