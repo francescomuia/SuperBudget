@@ -39,8 +39,6 @@ import javax.swing.SwingWorker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
-import com.sun.tools.javac.resources.version;
-
 public class SplashScreen extends JDialog
 {
 	private static final long serialVersionUID = 1L;
@@ -176,11 +174,11 @@ public class SplashScreen extends JDialog
 						ApplicationZipFile applicationZipFile = GitHubVersionChecker.getLatestZip();
 						publish(new SimpleEntry<String, Integer>("Dowload Application", new Integer(0)));
 						getProgressBar().setMaximum(applicationZipFile.getBlob().getSize());
-						// String fileName = applicationZipFile.getBlob().getName()
-						// .substring(0, applicationZipFile.getBlob().getName().lastIndexOf("."));
-						// File tempFile = File.createTempFile(fileName, ".zip");
-						// dowloadAppFromUrl(GIT_HUB_DOWNLOAD_APP_URL + applicationZipFile.getBlob().getSha(), tempFile, tempFile.getParent());
-						File tempFile = new File("C:/Users/muia/AppData/Local/Temp/SuperBudget-0.2-SNAPSHOT7343214040113956310.zip");
+						String fileName = applicationZipFile.getBlob().getName()
+								.substring(0, applicationZipFile.getBlob().getName().lastIndexOf("."));
+						File tempFile = File.createTempFile(fileName, ".zip");
+						dowloadAppFromUrl(GIT_HUB_DOWNLOAD_APP_URL + applicationZipFile.getBlob().getSha(), tempFile, tempFile.getParent());
+						// File tempFile = new File("C:/Users/muia/AppData/Local/Temp/SuperBudget-0.2-SNAPSHOT7343214040113956310.zip");
 						this.checkSuperBudgetUpdaterVersion(tempFile);
 
 					}
@@ -191,11 +189,11 @@ public class SplashScreen extends JDialog
 				Logger logger = Logger.getLogger(SplashScreenTask.class);
 				logger.error("Tentativo di controllo versione fallito", e);
 			}
-			// catch (IOException e)
-			// {
-			// // TODO Auto-generated catch block
-			// e.printStackTrace();
-			// }
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		}
 
