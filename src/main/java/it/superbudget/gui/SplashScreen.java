@@ -1,5 +1,6 @@
 package it.superbudget.gui;
 
+import it.superbudget.ApplicationZipFile;
 import it.superbudget.GitHubVersionChecker;
 import it.superbudget.SuperBudget;
 import it.superbudget.persistence.PersistenceManager;
@@ -9,8 +10,21 @@ import it.superbudget.util.messages.MessagesUtils;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.text.NumberFormat;
 import java.util.AbstractMap.SimpleEntry;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Properties;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
@@ -25,6 +39,8 @@ import javax.swing.SwingWorker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
+import com.sun.tools.javac.resources.version;
+
 public class SplashScreen extends JDialog
 {
 	private static final long serialVersionUID = 1L;
@@ -38,6 +54,10 @@ public class SplashScreen extends JDialog
 	private JPanel panelLogo;
 
 	private JLabel lblVersion;
+
+	private static String GIT_HUB_DOWNLOAD_APP_URL = "http://github.com/api/v2/json/blob/show/francescomuia/SuperBudget/";
+
+	private static final String SUPER_BUDGET_UPDATER_JAR_NAME = "SuperBudgetUpdater";
 
 	public SplashScreen()
 	{
@@ -90,6 +110,58 @@ public class SplashScreen extends JDialog
 			logger.info("Logging started");
 		}
 
+		@SuppressWarnings("unchecked")
+		public void dowloadAppFromUrl(String fAddress, File localFileName, String destinationDir)
+		{
+			OutputStream outStream = null;
+			URLConnection uCon = null;
+
+			InputStream is = null;
+			try
+			{
+				URL Url;
+				byte[] buf;
+				int ByteRead, ByteWritten = 0;
+				Url = new URL(fAddress);
+				outStream = new BufferedOutputStream(new FileOutputStream(localFileName));
+				int tempFileSize = getProgressBar().getMaximum();
+				double effectiveSizeMb = tempFileSize / 1024.00;
+				double mbDowloaded = 0.0;
+				effectiveSizeMb = effectiveSizeMb / 1024.00;
+				uCon = Url.openConnection();
+				is = uCon.getInputStream();
+				buf = new byte[1024];
+				while ((ByteRead = is.read(buf)) != -1)
+				{
+					outStream.write(buf, 0, ByteRead);
+					ByteWritten += ByteRead;
+					mbDowloaded = ByteWritten / 1024.00;
+					mbDowloaded = mbDowloaded / 1024.00;
+					NumberFormat numberFormat = NumberFormat.getInstance();
+					numberFormat.setMaximumFractionDigits(2);
+					publish(new SimpleEntry<String, Integer>("Dowloaded " + numberFormat.format(mbDowloaded) + " of "
+							+ numberFormat.format(effectiveSizeMb), ByteWritten));
+				}
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+			finally
+			{
+				try
+				{
+					is.close();
+					outStream.close();
+				}
+				catch (IOException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+
+		@SuppressWarnings("unchecked")
 		public void checkApplicationVersion()
 		{
 			try
@@ -101,10 +173,16 @@ public class SplashScreen extends JDialog
 							JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 					if (choose == JOptionPane.YES_OPTION)
 					{
-						System.out.println(getClass().getResource("downloaderVer.properties"));
-						System.out.println(getClass().getResource("/downloaderVer.properties"));
-						System.out.println(getClass().getResource("./downloaderVer.properties"));
-						System.exit(-1);
+						ApplicationZipFile applicationZipFile = GitHubVersionChecker.getLatestZip();
+						publish(new SimpleEntry<String, Integer>("Dowload Application", new Integer(0)));
+						getProgressBar().setMaximum(applicationZipFile.getBlob().getSize());
+						// String fileName = applicationZipFile.getBlob().getName()
+						// .substring(0, applicationZipFile.getBlob().getName().lastIndexOf("."));
+						// File tempFile = File.createTempFile(fileName, ".zip");
+						// dowloadAppFromUrl(GIT_HUB_DOWNLOAD_APP_URL + applicationZipFile.getBlob().getSha(), tempFile, tempFile.getParent());
+						File tempFile = new File("C:/Users/muia/AppData/Local/Temp/SuperBudget-0.2-SNAPSHOT7343214040113956310.zip");
+						this.checkSuperBudgetUpdaterVersion(tempFile);
+
 					}
 				}
 			}
@@ -113,7 +191,50 @@ public class SplashScreen extends JDialog
 				Logger logger = Logger.getLogger(SplashScreenTask.class);
 				logger.error("Tentativo di controllo versione fallito", e);
 			}
+			// catch (IOException e)
+			// {
+			// // TODO Auto-generated catch block
+			// e.printStackTrace();
+			// }
 
+		}
+
+		private void checkSuperBudgetUpdaterVersion(File tempFile)
+		{
+			Properties properties = new Properties();
+			try
+			{
+				properties.load(SplashScreenTask.class.getResourceAsStream("/superBudgetUpdaterVersion.properties"));
+				ZipFile zipAppFile = new ZipFile(tempFile);
+				Enumeration<? extends ZipEntry> enumeration = zipAppFile.entries();
+				ZipEntry superBudgetUpdaterEntry = null;
+				while (enumeration.hasMoreElements())
+				{
+					ZipEntry zipEntry = (ZipEntry) enumeration.nextElement();
+					if (zipEntry.getName().contains(SUPER_BUDGET_UPDATER_JAR_NAME))
+					{
+						superBudgetUpdaterEntry = zipEntry;
+						break;
+					}
+				}
+				String newVersionString = superBudgetUpdaterEntry
+						.getName()
+						.substring(
+								(superBudgetUpdaterEntry.getName().lastIndexOf(SUPER_BUDGET_UPDATER_JAR_NAME + "-") + (SUPER_BUDGET_UPDATER_JAR_NAME + "-")
+										.length()), superBudgetUpdaterEntry.getName().lastIndexOf(".jar"));
+				Double currentVersion = new Double(properties.getProperty("version"));
+				Double newVersion = new Double(newVersionString);
+				if (newVersion > currentVersion)
+				{
+					System.out.println("BISOGNA AGGIORNARE L'UPDATER");
+				}
+
+			}
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		public void startPersistenceContext()

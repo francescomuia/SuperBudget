@@ -240,7 +240,7 @@
 				<executions>
 					<execution>
 						<id>make-assembly</id> <!-- this is used for inheritance merges -->
-						<phase>package</phase> <!-- append to the packaging phase. -->
+						<phase>install</phase> <!-- append to the packaging phase. -->
 						<goals>
 							<goal>single</goal> <!-- goals == mojos -->
 						</goals>
@@ -331,8 +331,8 @@
 		</dependency>
 		<dependency>
 			<groupId>myapps</groupId>
-			<artifactId>GitHubSuperBudgetDownloader</artifactId>
-			<version>0.1</version>
+			<artifactId>SuperBudgetUpdater</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 	<distributionManagement>

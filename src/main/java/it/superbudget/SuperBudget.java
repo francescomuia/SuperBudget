@@ -15,7 +15,7 @@ import sun.jvmstat.monitor.MonitorException;
 import sun.jvmstat.monitor.MonitoredHost;
 import sun.jvmstat.monitor.MonitoredVm;
 import sun.jvmstat.monitor.MonitoredVmUtil;
-import sun.jvmstat.monitor.VmIdentifier;
+import sun.jvmstat.monitor.VmIdentifier; 
 
 /**
  * Main class for the application
