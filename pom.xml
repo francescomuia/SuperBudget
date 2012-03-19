@@ -329,11 +329,7 @@
 			<artifactId>gson</artifactId>
 			<version>1.4</version>
 		</dependency>
-		<dependency>
-			<groupId>myapps</groupId>
-			<artifactId>SuperBudgetUpdater</artifactId>
-			<version>0.0.1</version>
-		</dependency>
+
 	</dependencies>
 	<distributionManagement>
 		<repository>
@@ -367,10 +363,16 @@
 	</pluginRepositories>
 	<profiles>
 		<profile>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<id>development</id>
 			<properties>
 				<db.driverClass>org.apache.derby.jdbc.ClientDriver</db.driverClass>
-				<db.connectionURL>jdbc:derby://localhost:1527/C:\Users\muia\workspace\programmi\superbudget\database</db.connectionURL>
+				<db.connectionURL>jdbc:derby://localhost:1527/C:/Users/muia/workspace/programmi/superbudget/database</db.connectionURL>
+				<DEBUG>true</DEBUG>
+				<UPLOADER.LOCATION>C:/Users/muia/workspace/programmi/superbudget/target/lib/SuperBudgetUpdater-0.0.1.jar</UPLOADER.LOCATION>
+				<PROGRAM.LOCATION>C:/Users/muia/workspace/programmi/superbudget/target/</PROGRAM.LOCATION>
 			</properties>
 		</profile>
 		<profile>
@@ -378,6 +380,9 @@
 			<properties>
 				<db.driverClass>org.apache.derby.jdbc.EmbeddedDriver</db.driverClass>
 				<db.connectionURL>jdbc:derby:./database;create=true</db.connectionURL>
+				<DEBUG>false</DEBUG>
+				<UPLOADER.LOCATION></UPLOADER.LOCATION>
+				<PROGRAM.LOCATION></PROGRAM.LOCATION>
 			</properties>
 		</profile>
 	</profiles>

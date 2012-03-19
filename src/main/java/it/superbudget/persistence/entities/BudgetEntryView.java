@@ -31,7 +31,9 @@ public class BudgetEntryView implements Serializable
 	private SubCategory subCategory;
 
 	@Temporal(TemporalType.DATE)
-	private Date date;
+	private Date dateFrom;
+
+	private Date dateTo;
 
 	@ManyToOne
 	private Budget budget;
@@ -53,13 +55,14 @@ public class BudgetEntryView implements Serializable
 		this.budget = em.find(Budget.class, resultSet.getLong(2));
 		this.budgetEntryId = resultSet.getLong(3);
 		this.category = em.find(Category.class, resultSet.getLong(4));
-		this.date = resultSet.getDate(5);
-		this.note = resultSet.getString(6);
-		this.recurrence = em.find(Recurrence.class, resultSet.getLong(7));
-		this.subCategory = em.find(SubCategory.class, resultSet.getLong(8));
-		this.type = resultSet.getString(9);
+		this.dateFrom = resultSet.getDate(5);
+		this.dateTo = resultSet.getDate(6);
+		this.note = resultSet.getString(7);
+		this.recurrence = em.find(Recurrence.class, resultSet.getLong(8));
+		this.subCategory = em.find(SubCategory.class, resultSet.getLong(9));
+		this.type = resultSet.getString(10);
 		// this.recurrenceValue = resultSet.getInt(6);
-		this.value = resultSet.getBigDecimal(10);
+		this.value = resultSet.getBigDecimal(11);
 	}
 
 	public Long getBudgetEntryViewId()
@@ -112,14 +115,14 @@ public class BudgetEntryView implements Serializable
 		this.subCategory = subCategory;
 	}
 
-	public Date getDate()
+	public Date getDateFrom()
 	{
-		return date;
+		return dateFrom;
 	}
 
-	public void setDate(Date date)
+	public void setDateFrom(Date date)
 	{
-		this.date = date;
+		this.dateFrom = date;
 	}
 
 	public Budget getBudget()
@@ -160,5 +163,25 @@ public class BudgetEntryView implements Serializable
 	public void setRecurrence(Recurrence recurrence)
 	{
 		this.recurrence = recurrence;
+	}
+
+	public Date getDateTo()
+	{
+		return dateTo;
+	}
+
+	public void setDateTo(Date dateTo)
+	{
+		this.dateTo = dateTo;
+	}
+
+	public String getType()
+	{
+		return type;
+	}
+
+	public void setType(String type)
+	{
+		this.type = type;
 	}
 }

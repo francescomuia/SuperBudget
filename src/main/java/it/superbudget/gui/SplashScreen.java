@@ -2,27 +2,33 @@ package it.superbudget.gui;
 
 import it.superbudget.ApplicationZipFile;
 import it.superbudget.GitHubVersionChecker;
+import it.superbudget.ShutdownHook;
 import it.superbudget.SuperBudget;
+import it.superbudget.exceptions.DownloadException;
 import it.superbudget.persistence.PersistenceManager;
 import it.superbudget.util.bundles.ResourcesBundlesUtil;
+import it.superbudget.util.jars.JarUtils;
 import it.superbudget.util.messages.MessagesUtils;
+import it.superbudget.util.net.InternetConnectionUtils;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLDecoder;
 import java.text.NumberFormat;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.Properties;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -57,6 +63,10 @@ public class SplashScreen extends JDialog
 
 	private static final String SUPER_BUDGET_UPDATER_JAR_NAME = "SuperBudgetUpdater";
 
+	private JPanel panelMessages;
+
+	private JLabel lblMessage;
+
 	public SplashScreen()
 	{
 		setUndecorated(true);
@@ -74,12 +84,20 @@ public class SplashScreen extends JDialog
 		getContentPane().add(panel, BorderLayout.SOUTH);
 		panel.setLayout(new BorderLayout(0, 0));
 
-		lblProgress = new JLabel(" ");
-		lblProgress.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblProgress, BorderLayout.NORTH);
-
 		progressBar = new JProgressBar();
 		panel.add(progressBar, BorderLayout.CENTER);
+
+		panelMessages = new JPanel();
+		panel.add(panelMessages, BorderLayout.NORTH);
+		panelMessages.setLayout(new GridLayout(0, 1, 0, 0));
+
+		lblProgress = new JLabel("");
+		panelMessages.add(lblProgress);
+		lblProgress.setHorizontalAlignment(SwingConstants.CENTER);
+
+		lblMessage = new JLabel("");
+		lblMessage.setHorizontalAlignment(SwingConstants.CENTER);
+		panelMessages.add(lblMessage);
 
 		panelLogo = new JPanel();
 		getContentPane().add(panelLogo, BorderLayout.CENTER);
@@ -101,6 +119,8 @@ public class SplashScreen extends JDialog
 	{
 		private SuperBudgetApp application;
 
+		private Logger logger = Logger.getLogger(SplashScreenTask.class);
+
 		public void enableLoggingSystem()
 		{
 			DOMConfigurator.configure(SuperBudget.class.getResource("/log4j.xml"));
@@ -109,7 +129,7 @@ public class SplashScreen extends JDialog
 		}
 
 		@SuppressWarnings("unchecked")
-		public void dowloadAppFromUrl(String fAddress, File localFileName, String destinationDir)
+		public void dowloadAppFromUrl(String fAddress, File localFileName, String destinationDir) throws DownloadException
 		{
 			OutputStream outStream = null;
 			URLConnection uCon = null;
@@ -143,7 +163,7 @@ public class SplashScreen extends JDialog
 			}
 			catch (Exception e)
 			{
-				e.printStackTrace();
+				throw new DownloadException("Si è verificato un errore durante il download", e);
 			}
 			finally
 			{
@@ -162,77 +182,163 @@ public class SplashScreen extends JDialog
 		@SuppressWarnings("unchecked")
 		public void checkApplicationVersion()
 		{
+
 			try
 			{
-				if (!GitHubVersionChecker.isUpToDate(ResourcesBundlesUtil.getApplicationVersion()))
+				this.moveOldApplicationJar();
+			}
+			catch (UnsupportedEncodingException e2)
+			{
+				logger.error("Errore durante lo spostamento del vecchio application jar", e2);
+			}
+			if (InternetConnectionUtils.isInternetReachable("www.google.it"))
+			{
+				boolean isUpToDate = false;
+				try
 				{
-					int choose = JOptionPane.showConfirmDialog(rootPane,
-							"<html>Esiste una nuova versione dell'applicativo.<br/>Procedere con l'aggiornamento ? </html>", "Super Budget",
-							JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-					if (choose == JOptionPane.YES_OPTION)
+					// isUpToDate = GitHubVersionChecker.isUpToDate(ResourcesBundlesUtil.getApplicationVersion());
+					isUpToDate = false;
+					if (!isUpToDate)
 					{
-						ApplicationZipFile applicationZipFile = GitHubVersionChecker.getLatestZip();
-						publish(new SimpleEntry<String, Integer>("Dowload Application", new Integer(0)));
-						getProgressBar().setMaximum(applicationZipFile.getBlob().getSize());
-						String fileName = applicationZipFile.getBlob().getName()
-								.substring(0, applicationZipFile.getBlob().getName().lastIndexOf("."));
-						File tempFile = File.createTempFile(fileName, ".zip");
-						dowloadAppFromUrl(GIT_HUB_DOWNLOAD_APP_URL + applicationZipFile.getBlob().getSha(), tempFile, tempFile.getParent());
-						// File tempFile = new File("C:/Users/muia/AppData/Local/Temp/SuperBudget-0.2-SNAPSHOT7343214040113956310.zip");
-						this.checkSuperBudgetUpdaterVersion(tempFile);
+						int choose = JOptionPane.showConfirmDialog(rootPane,
+								"<html>Esiste una nuova versione dell'applicativo.<br/>Procedere con l'aggiornamento ? </html>", "Super Budget",
+								JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+						if (choose == JOptionPane.YES_OPTION)
+						{
+							try
+							{
+								ApplicationZipFile applicationZipFile = GitHubVersionChecker.getLatestZip();
+								publish(new SimpleEntry<String, Integer>("Dowload Application", new Integer(0)));
+								getProgressBar().setMaximum(applicationZipFile.getBlob().getSize());
+								String applicationFileName = applicationZipFile.getBlob().getName();
+								File tempFile = File.createTempFile(applicationFileName, ".zip");
+								// File tempFile = new File("C:\\Users\\muia\\AppData\\Local\\Temp/SuperBudget-0.2-SNAPSHOT3722066682505420876.zip");
+								dowloadAppFromUrl(GIT_HUB_DOWNLOAD_APP_URL + applicationZipFile.getBlob().getSha(), tempFile, tempFile.getParent());
+								String path = SplashScreenTask.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+								String decodedPath = URLDecoder.decode(path, "UTF-8");
+								File applicationDir = new File(decodedPath).getParentFile();
+								ZipFile applicationZip = new ZipFile(tempFile);
+								publish(new SimpleEntry<String, Integer>("Extract Application file", new Integer(0)));
+								getProgressBar().setMaximum(applicationZip.size());
+								Enumeration<? extends ZipEntry> enumeration = applicationZip.entries();
+								int counter = 1;
+								while (enumeration.hasMoreElements())
+								{
+									File entryFile = null;
+									ZipEntry entry = enumeration.nextElement();
+									if (!entry.isDirectory())
+									{
+										String name = entry.getName();
+										String fileName = name.substring(name.lastIndexOf("/") + 1);
+										int firstIndex = name.indexOf("/");
+										int secondIndex = name.lastIndexOf("/");
+										if (firstIndex != secondIndex)
+										{
+											String dir = name.substring(firstIndex, secondIndex);
+											entryFile = new File(applicationDir, dir + File.separator + fileName);
+										}
+										else
+										{
+											entryFile = new File(applicationDir, File.separator + fileName);
+										}
+										String publishString = "<html>Extract file " + fileName + " N° " + counter + " of " + applicationZip.size();
+										publish(new SimpleEntry<String, Integer>(publishString + "</html>", new Integer(counter)));
+										counter++;
+										if (!entryFile.exists() || !entryFile.getName().equals(fileName))
+										{
+											byte[] buf;
+											int ByteRead, ByteWritten = 0;
+											BufferedOutputStream outStream = null;
+											InputStream is = null;
+											try
+											{
+												outStream = new BufferedOutputStream(new FileOutputStream(entryFile));
+												double mbDowloaded = 0.0;
+												is = applicationZip.getInputStream(entry);
+												buf = new byte[16 * 1024];
+												while ((ByteRead = is.read(buf)) != -1)
+												{
+													outStream.write(buf, 0, ByteRead);
+													ByteWritten += ByteRead;
+													mbDowloaded = ByteWritten / 1024.00;
+													NumberFormat numberFormat = NumberFormat.getInstance();
+													numberFormat.setMaximumFractionDigits(2);
+													getLblMessage().setText("Extracted " + numberFormat.format(mbDowloaded));
+													// publishString += "<br/><center> Extracted " + numberFormat.format(mbDowloaded) +
+													// "</center></html>";
+													// System.out.println("Extracted " + numberFormat.format(mbDowloaded));
+													// publish(new SimpleEntry<String, Integer>(publishString, counter));
+												}
+											}
+											catch (IOException e)
+											{
+												e.printStackTrace();
+											}
+											finally
+											{
+												if (outStream != null)
+												{
+													try
+													{
+														outStream.flush();
+														outStream.close();
+													}
+													catch (IOException e1)
+													{
+														e1.printStackTrace();
+													}
+												}
+												if (is != null)
+												{
+													is.close();
+												}
+											}
+										}
+									}
+									ShutdownHook.restartApp.set(true);
+									JOptionPane.showMessageDialog(rootPane, "Aggiornamento avvenuto l'applicazione verrà riavviata");
+									System.exit(1);
+								}
+							}
+							catch (RuntimeException e)
+							{
+								logger.error("Impossibile ottere file zip", e);
+								MessagesUtils.showExceptionMessage(new Exception("Impossibile ottere file dell'applicazione", e));
+							}
+							catch (IOException e)
+							{
+								logger.error("Errore durante la crezione del file temporaneo", e);
+								MessagesUtils.showExceptionMessage(new Exception("Errore durante la crezione del file temporaneo", e));
+							}
+							catch (DownloadException e)
+							{
+								logger.error(e.getMessage(), e);
+								MessagesUtils.showExceptionMessage(new Exception(e.getMessage(), e));
+							}
 
+						}
 					}
 				}
+				catch (RuntimeException e)
+				{
+
+					logger.error("Tentativo di controllo versione fallito", e);
+				}
 			}
-			catch (RuntimeException e)
+			else
 			{
-				Logger logger = Logger.getLogger(SplashScreenTask.class);
-				logger.error("Tentativo di controllo versione fallito", e);
-			}
-			catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.info("Nessuna connessione");
 			}
 
 		}
 
-		private void checkSuperBudgetUpdaterVersion(File tempFile)
+		private void moveOldApplicationJar() throws UnsupportedEncodingException
 		{
-			Properties properties = new Properties();
-			try
-			{
-				properties.load(SplashScreenTask.class.getResourceAsStream("/superBudgetUpdaterVersion.properties"));
-				ZipFile zipAppFile = new ZipFile(tempFile);
-				Enumeration<? extends ZipEntry> enumeration = zipAppFile.entries();
-				ZipEntry superBudgetUpdaterEntry = null;
-				while (enumeration.hasMoreElements())
-				{
-					ZipEntry zipEntry = (ZipEntry) enumeration.nextElement();
-					if (zipEntry.getName().contains(SUPER_BUDGET_UPDATER_JAR_NAME))
-					{
-						superBudgetUpdaterEntry = zipEntry;
-						break;
-					}
-				}
-				String newVersionString = superBudgetUpdaterEntry
-						.getName()
-						.substring(
-								(superBudgetUpdaterEntry.getName().lastIndexOf(SUPER_BUDGET_UPDATER_JAR_NAME + "-") + (SUPER_BUDGET_UPDATER_JAR_NAME + "-")
-										.length()), superBudgetUpdaterEntry.getName().lastIndexOf(".jar"));
-				Double currentVersion = new Double(properties.getProperty("version"));
-				Double newVersion = new Double(newVersionString);
-				if (newVersion > currentVersion)
-				{
-					System.out.println("BISOGNA AGGIORNARE L'UPDATER");
-				}
-
-			}
-			catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			String path = SplashScreenTask.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+			String decodedPath = URLDecoder.decode(path, "UTF-8");
+			File dir = new File(decodedPath).getParentFile();
+			String currentFile = JarUtils.getLatestApplicationJarVersion(dir);
+			JarUtils.moveOldApplicationJarVersion(dir.listFiles(), currentFile, dir);
 		}
 
 		public void startPersistenceContext()
@@ -359,5 +465,10 @@ public class SplashScreen extends JDialog
 	public void start()
 	{
 		worker.execute();
+	}
+
+	public JLabel getLblMessage()
+	{
+		return lblMessage;
 	}
 }

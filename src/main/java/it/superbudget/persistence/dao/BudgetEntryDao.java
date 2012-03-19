@@ -21,16 +21,16 @@ import javax.persistence.EntityManager;
 public class BudgetEntryDao
 {
 
-	public List<BudgetEntryView> getIncomes(Budget budget)
+	public List<BudgetEntryView> getIncomes(Budget budget, int year)
 	{
-		return this.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.INCOME, CalendarsUtils.getSqlInitCurrentYear(),
-				CalendarsUtils.getSqlFinishCurrentYear());
+		return this.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.INCOME, CalendarsUtils.getSqlInitYear(year),
+				CalendarsUtils.getSqlFinishYear(year));
 	}
 
-	public List<BudgetEntryView> getExpenses(Budget budget)
+	public List<BudgetEntryView> getExpenses(Budget budget, int year)
 	{
-		return this.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.EXPENSE, CalendarsUtils.getSqlInitCurrentYear(),
-				CalendarsUtils.getSqlFinishCurrentYear());
+		return this.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.EXPENSE, CalendarsUtils.getSqlInitYear(year),
+				CalendarsUtils.getSqlFinishYear(year));
 	}
 
 	public List<BudgetEntryView> getBudgetEntry(Long budgetId, BudgetEntryTypes type, Date startDate, Date endDate)

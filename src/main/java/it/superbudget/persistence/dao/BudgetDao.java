@@ -35,11 +35,11 @@ public class BudgetDao
 		return query.getResultList();
 	}
 
-	public BigDecimal getYearlyIncome(Budget budget)
+	public BigDecimal getYearlyIncome(Budget budget, int year)
 	{
 		BudgetEntryDao budgetEntryDao = new BudgetEntryDao();
 		List<BudgetEntryView> budgetEntryViews = budgetEntryDao.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.INCOME,
-				CalendarsUtils.getSqlInitCurrentYear(), CalendarsUtils.getSqlFinishCurrentYear());
+				CalendarsUtils.getSqlInitYear(year), CalendarsUtils.getSqlFinishYear(year));
 		BigDecimal sums = new BigDecimal(0.0);
 		for (BudgetEntryView budgetEntryView : budgetEntryViews)
 		{
@@ -48,23 +48,16 @@ public class BudgetDao
 		return sums;
 	}
 
-	public BigDecimal getYearlyExpense(Budget budget)
+	public BigDecimal getYearlyExpense(Budget budget, int year)
 	{
 		BudgetEntryDao budgetEntryDao = new BudgetEntryDao();
 		List<BudgetEntryView> budgetEntryViews = budgetEntryDao.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.EXPENSE,
-				CalendarsUtils.getSqlInitCurrentYear(), CalendarsUtils.getSqlFinishCurrentYear());
+				CalendarsUtils.getSqlInitYear(year), CalendarsUtils.getSqlFinishYear(year));
 		BigDecimal sums = new BigDecimal(0.0);
 		for (BudgetEntryView budgetEntryView : budgetEntryViews)
 		{
 			sums = sums.add(budgetEntryView.getValue());
 		}
 		return sums;
-	}
-
-	public static void main(String[] args)
-	{
-		Budget budget = new Budget();
-		budget.setBudgetId(1L);
-		System.out.println(new BudgetDao().getYearlyExpense(budget));
 	}
 }

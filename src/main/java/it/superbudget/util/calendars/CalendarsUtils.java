@@ -30,9 +30,27 @@ public class CalendarsUtils
 		return new java.sql.Date(calendar.getTimeInMillis());
 	}
 
+	public static java.sql.Date getSqlInitYear(int year)
+	{
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, year);
+		calendar.set(Calendar.DAY_OF_MONTH, 1);
+		calendar.set(Calendar.MONTH, Calendar.JANUARY);
+		return new java.sql.Date(calendar.getTimeInMillis());
+	}
+
 	public static java.sql.Date getSqlFinishCurrentYear()
 	{
 		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.DAY_OF_MONTH, 31);
+		calendar.set(Calendar.MONTH, Calendar.DECEMBER);
+		return new java.sql.Date(calendar.getTimeInMillis());
+	}
+
+	public static java.sql.Date getSqlFinishYear(int year)
+	{
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, year);
 		calendar.set(Calendar.DAY_OF_MONTH, 31);
 		calendar.set(Calendar.MONTH, Calendar.DECEMBER);
 		return new java.sql.Date(calendar.getTimeInMillis());

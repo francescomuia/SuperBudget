@@ -1,5 +1,6 @@
 package it.superbudget.util.bundles;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Locale;
@@ -15,6 +16,10 @@ public class ResourcesBundlesUtil
 	public static String VERSION_FILE_NAME = "/version.properties";
 
 	public static String VERSION_PROPERTY_NAME = "version";
+
+	private static String DEBUG = "DEBUG";
+
+	private static String UPLOADER_LOCATION_KEY = "UPLOADER.LOCATION";
 
 	private static Logger getLogger()
 	{
@@ -41,6 +46,36 @@ public class ResourcesBundlesUtil
 		return null;
 	}
 
+	public static boolean isDebug()
+	{
+		Properties props = new Properties();
+		try
+		{
+			props.load(ResourcesBundlesUtil.class.getResourceAsStream(VERSION_FILE_NAME));
+			return new Boolean(props.getProperty(DEBUG));
+		}
+		catch (IOException e)
+		{
+			getLogger().error("Failed to load Version Properties", e);
+		}
+		return false;
+	}
+
+	public static File getSuperBudgetUploaderDebugJar()
+	{
+		Properties props = new Properties();
+		try
+		{
+			props.load(ResourcesBundlesUtil.class.getResourceAsStream(VERSION_FILE_NAME));
+			return new File(props.getProperty(UPLOADER_LOCATION_KEY));
+		}
+		catch (IOException e)
+		{
+			getLogger().error("Failed to load Version Properties", e);
+		}
+		return null;
+	}
+
 	public static void dump(ResourceBundle bundle)
 	{
 		Logger logger = getLogger();
@@ -51,4 +86,5 @@ public class ResourcesBundlesUtil
 			logger.debug(key + " = " + bundle.getString(key));
 		}
 	}
+
 }
