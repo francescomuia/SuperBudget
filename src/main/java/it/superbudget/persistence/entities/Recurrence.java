@@ -21,6 +21,10 @@ public class Recurrence implements Serializable
 
 	private String name;
 
+	private int calendarField;
+
+	private int calendarIncrement;
+
 	public Long getRecurrenceId()
 	{
 		return recurrenceId;
@@ -81,5 +85,25 @@ public class Recurrence implements Serializable
 	public String toString()
 	{
 		return name;
+	}
+
+	public int getCalendarField()
+	{
+		return calendarField;
+	}
+
+	public void setCalendarField(int calendarField)
+	{
+		this.calendarField = calendarField;
+	}
+
+	public int getCalendarIncrement()
+	{
+		return calendarIncrement;
+	}
+
+	public void setCalendarIncrement(int calendarIncrement)
+	{
+		this.calendarIncrement = calendarIncrement;
 	}
 }

@@ -60,4 +60,30 @@ public class BudgetDao
 		}
 		return sums;
 	}
+
+	public BigDecimal getMontlyIncome(Budget budget, int month, int year)
+	{
+		BudgetEntryDao budgetEntryDao = new BudgetEntryDao();
+		List<BudgetEntryView> budgetEntryViews = budgetEntryDao.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.INCOME,
+				CalendarsUtils.getSqlInitMonth(month, year), CalendarsUtils.getSqlFinishMonth(month, year));
+		BigDecimal sums = new BigDecimal(0.0);
+		for (BudgetEntryView budgetEntryView : budgetEntryViews)
+		{
+			sums = sums.add(budgetEntryView.getValue());
+		}
+		return sums;
+	}
+
+	public BigDecimal getMontlyExpense(Budget budget, int month, int year)
+	{
+		BudgetEntryDao budgetEntryDao = new BudgetEntryDao();
+		List<BudgetEntryView> budgetEntryViews = budgetEntryDao.getBudgetEntry(budget.getBudgetId(), BudgetEntryTypes.EXPENSE,
+				CalendarsUtils.getSqlInitMonth(month, year), CalendarsUtils.getSqlFinishMonth(month, year));
+		BigDecimal sums = new BigDecimal(0.0);
+		for (BudgetEntryView budgetEntryView : budgetEntryViews)
+		{
+			sums = sums.add(budgetEntryView.getValue());
+		}
+		return sums;
+	}
 }

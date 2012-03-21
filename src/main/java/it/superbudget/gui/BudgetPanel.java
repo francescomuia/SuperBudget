@@ -1,6 +1,6 @@
 package it.superbudget.gui;
 
-import it.superbudget.gui.panel.SummaryYearlyBudgetPanel;
+import it.superbudget.gui.panel.MontlyBudgetPanel;
 import it.superbudget.gui.panel.YearlyBudgetPanel;
 import it.superbudget.persistence.entities.Budget;
 import it.superbudget.util.bundles.ResourcesBundlesUtil;
@@ -8,17 +8,14 @@ import it.superbudget.util.bundles.ResourcesBundlesUtil;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ResourceBundle;
 
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
 import javax.swing.UIManager;
@@ -47,21 +44,21 @@ public class BudgetPanel extends JPanel
 
 	private Budget budget;
 
-	private ResourceBundle labels;
+	private final ResourceBundle labels;
 
-	private Logger logger = Logger.getLogger(BudgetPanel.class);
+	private final Logger logger = Logger.getLogger(BudgetPanel.class);
 
-	private JSplitPane splitPane;
+	// private JSplitPane splitPane;
 
-	private JFrame owner;
+	private final JFrame owner;
 
-	private JButton btnNewButton;
+	private final JButton btnNewButton;
 
-	private JButton btnNuovaSpesa;
+	private final JButton btnNuovaSpesa;
 
-	private YearlyBudgetPanel yearlyBudgetPanel;
+	private final YearlyBudgetPanel yearlyBudgetPanel;
 
-	private SummaryYearlyBudgetPanel summaryYearlyBudgetPanel;
+	private final MontlyBudgetPanel montlyBudgetPanel;
 
 	/**
 	 * Create the panel.
@@ -74,36 +71,15 @@ public class BudgetPanel extends JPanel
 		this.labels = ResourcesBundlesUtil.getLabelsBundles();
 		setLayout(new BorderLayout(0, 0));
 
-		splitPane = new JSplitPane();
-		splitPane.setBackground(Color.WHITE);
-		add(splitPane, BorderLayout.CENTER);
-
-		JPanel surround = new JPanel();
-		surround.setLayout(new BoxLayout(surround, BoxLayout.PAGE_AXIS));
-		splitPane.setLeftComponent(surround);
-
-		summaryYearlyBudgetPanel = new SummaryYearlyBudgetPanel(budget);
-		surround.add(summaryYearlyBudgetPanel);
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBackground(Color.WHITE);
-		splitPane.setRightComponent(tabbedPane);
+		this.add(tabbedPane);
 		yearlyBudgetPanel = new YearlyBudgetPanel(owner, budget);
-		yearlyBudgetPanel.addYearChangeListener(summaryYearlyBudgetPanel);
-		tabbedPane.addTab("Anno", null, yearlyBudgetPanel, null);
 
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel, null);
-		panel.setLayout(new GridLayout(2, 0, 0, 0));
+		tabbedPane.addTab("Vis. Annuale", null, yearlyBudgetPanel, null);
 
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.WHITE);
-		panel.add(panel_1);
-		panel_1.setLayout(new BorderLayout(0, 0));
-
-		JPanel panel_2 = new JPanel();
-		panel.add(panel_2);
-
+		this.montlyBudgetPanel = new MontlyBudgetPanel(owner, budget);
+		tabbedPane.addTab("Vis. Mensile", null, montlyBudgetPanel, null);
 		JToolBar toolBar = new JToolBar();
 		add(toolBar, BorderLayout.NORTH);
 
@@ -111,6 +87,7 @@ public class BudgetPanel extends JPanel
 				BudgetPanel.class.getResource("/images/euro.png")));
 		btnNewButton.addActionListener(new ActionListener()
 		{
+			@Override
 			public void actionPerformed(ActionEvent e)
 			{
 				showNewIcomesDialog();
@@ -136,11 +113,20 @@ public class BudgetPanel extends JPanel
 
 		if (this.budget != null)
 		{
-			summaryYearlyBudgetPanel.calculate();
-			yearlyBudgetPanel.populateTableIncome();
-			yearlyBudgetPanel.populateTableExpense();
+			this.updateTabs();
 		}
 		this.checkToolbarButton();
+	}
+
+	private void updateTabs()
+	{
+		this.yearlyBudgetPanel.getSummaryYearlyBudgetPanel().calculate();
+		yearlyBudgetPanel.populateTableIncome();
+		yearlyBudgetPanel.populateTableExpense();
+
+		this.montlyBudgetPanel.getSummaryMontlyBudgetPanel().calculate();
+		montlyBudgetPanel.populateTableIncome();
+		montlyBudgetPanel.populateTableExpense();
 	}
 
 	private void checkToolbarButton()
@@ -167,10 +153,7 @@ public class BudgetPanel extends JPanel
 		budgetEntryDialog.setVisible(true);
 		if (budgetEntryDialog.isUpdateViews())
 		{
-			yearlyBudgetPanel.populateTableIncome();
-			summaryYearlyBudgetPanel.calculate();
-			this.getSplitPane().resetToPreferredSizes();
-			this.summaryYearlyBudgetPanel.resetToPreferredSizes();
+			this.updateTabs();
 		}
 	}
 
@@ -180,10 +163,7 @@ public class BudgetPanel extends JPanel
 		budgetEntryDialog.setVisible(true);
 		if (budgetEntryDialog.isUpdateViews())
 		{
-			yearlyBudgetPanel.populateTableExpense();
-			summaryYearlyBudgetPanel.calculate();
-			this.getSplitPane().resetToPreferredSizes();
-			this.summaryYearlyBudgetPanel.resetToPreferredSizes();
+			this.updateTabs();
 		}
 	}
 
@@ -191,21 +171,12 @@ public class BudgetPanel extends JPanel
 	{
 		this.budget = newBudget;
 		yearlyBudgetPanel.setBudget(newBudget);
-		summaryYearlyBudgetPanel.setBudget(newBudget);
 		if (this.budget != null)
 		{
-			summaryYearlyBudgetPanel.calculate();
-			yearlyBudgetPanel.populateTableIncome();
-			yearlyBudgetPanel.populateTableExpense();
+			this.updateTabs();
 			this.checkToolbarButton();
-			this.getSplitPane().resetToPreferredSizes();
-			this.summaryYearlyBudgetPanel.resetToPreferredSizes();
+			this.yearlyBudgetPanel.resetToPreferredSizes();
+			this.montlyBudgetPanel.resetToPreferredSizes();
 		}
 	}
-
-	public JSplitPane getSplitPane()
-	{
-		return splitPane;
-	}
-
 }

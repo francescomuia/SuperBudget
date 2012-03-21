@@ -45,6 +45,7 @@ import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
@@ -76,7 +77,7 @@ public class BudgetEntryDialog extends JDialog
 
 	private final JPanel contentPanel = new JPanel();
 
-	private final BudgetEntry budgetEntry;
+	private BudgetEntry budgetEntry;
 
 	private final boolean income;
 
@@ -506,8 +507,10 @@ public class BudgetEntryDialog extends JDialog
 			panelFormContainer.add(recurrenceMontlySpinnerTo, "4, 16, fill, default");
 			if (budgetEntry != null)
 			{
-				recurrenceMontlySpinnerFrom.setValue(CalendarsUtils.getCurrentMonthLabel(budgetEntry.getDateFrom()));
-				recurrenceMontlySpinnerTo.setValue(CalendarsUtils.getCurrentMonthLabel(budgetEntry.getDateTo()));
+				String monthFrom = CalendarsUtils.getCurrentMonthLabel(budgetEntry.getDateFrom());
+				String monthTo = CalendarsUtils.getCurrentMonthLabel(budgetEntry.getDateTo());
+				recurrenceMontlySpinnerFrom.setValue(monthFrom);
+				recurrenceMontlySpinnerTo.setValue(monthTo != null ? monthTo : "");
 			}
 			else
 			{
@@ -853,17 +856,61 @@ public class BudgetEntryDialog extends JDialog
 					else
 					{
 						// Date date = (Date) this.datePicker.getModel().getValue();
-
-						BudgetEntry budgetEntry = null;
-						if (income)
+						if (this.budgetEntry != null)
 						{
-							budgetEntry = new Income(value, category, subCategory, dateFrom, dateTo, this.budget, null, note, recurrence);
+							if (budgetEntryDao.existBudgetEntry(this.budgetEntry))
+							{
+								budgetEntry.setValue(value);
+								budgetEntry.setCategory(category);
+								budgetEntry.setSubCategory(subCategory);
+								budgetEntry.setDateFrom(dateFrom);
+								budgetEntry.setDateTo(dateTo);
+								budgetEntry.setNote(note);
+								budgetEntry.setRecurrence(recurrence);
+								budgetEntryDao.save(budgetEntry);
+							}
+							else
+							{
+								int choose = JOptionPane
+										.showConfirmDialog(
+												this,
+												"<html>L'entry modificata è ricorsiva;<br/> la modifica comporterà la chiusura del' entry generante.<br> Continuare ? </html> ",
+												"Super Budget", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+								if (choose == JOptionPane.YES_OPTION)
+								{
+									this.budgetEntry = budgetEntryDao.findBudgetEntry(this.budgetEntry.getBudgetEntryId());
+									Calendar calendar = Calendar.getInstance();
+									calendar.setTime(dateFrom);
+									calendar.add(Calendar.DAY_OF_MONTH, -1);
+									this.budgetEntry.setDateTo(calendar.getTime());
+									BudgetEntry budgetEntry = null;
+									if (income)
+									{
+										budgetEntry = new Income(value, category, subCategory, dateFrom, dateTo, this.budget, null, note, recurrence);
+									}
+									else
+									{
+										budgetEntry = new Expenses(value, category, subCategory, dateFrom, dateTo, this.budget, null, note,
+												recurrence);
+									}
+									budgetEntryDao.save(this.budgetEntry);
+									budgetEntryDao.save(budgetEntry);
+								}
+							}
 						}
 						else
 						{
-							budgetEntry = new Expenses(value, category, subCategory, dateFrom, dateTo, this.budget, null, note, recurrence);
+							BudgetEntry budgetEntry = null;
+							if (income)
+							{
+								budgetEntry = new Income(value, category, subCategory, dateFrom, dateTo, this.budget, null, note, recurrence);
+							}
+							else
+							{
+								budgetEntry = new Expenses(value, category, subCategory, dateFrom, dateTo, this.budget, null, note, recurrence);
+							}
+							budgetEntryDao.save(budgetEntry);
 						}
-						budgetEntryDao.save(budgetEntry);
 						this.updateViews = true;
 						dispose();
 					}

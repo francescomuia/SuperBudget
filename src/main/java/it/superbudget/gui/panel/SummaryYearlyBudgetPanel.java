@@ -36,25 +36,25 @@ import com.jgoodies.forms.layout.RowSpec;
 
 public class SummaryYearlyBudgetPanel extends JSplitPane implements ChangeListener
 {
-	private ResourceBundle labels;
+	private final ResourceBundle labels;
 
-	private JLabel lblBudgetName;
+	private final JLabel lblBudgetName;
 
-	private JLabel labelEntrateAnnuali;
+	private final JLabel labelEntrateAnnuali;
 
-	private JLabel labelSpeseAnnuali;
+	private final JLabel labelSpeseAnnuali;
 
-	private JLabel lblSaldoParziale;
+	private final JLabel lblSaldoParziale;
 
-	private JComponent lblSaldo;
+	private final JComponent lblSaldo;
 
-	private JLabel labelSaldo;
+	private final JLabel labelSaldo;
 
-	private DefaultPieDataset dataset;
+	private final DefaultPieDataset dataset;
 
-	private JFreeChart jfc;
+	private final JFreeChart jfc;
 
-	private ChartPanel chartPanel;
+	private final ChartPanel chartPanel;
 
 	private static final String BUDGET_PANEL_LABEL_CALCULATE_ERROR = "BUDGET.PANEL.LABEL.CALCULATE.ERROR";
 
@@ -68,13 +68,13 @@ public class SummaryYearlyBudgetPanel extends JSplitPane implements ChangeListen
 
 	private static final String BUDGET_PANEL_LABEL_SALDO = "BUDGET.PANEL.LABEL.SALDO";
 
-	private Logger logger = Logger.getLogger(SummaryYearlyBudgetPanel.class);
+	private final Logger logger = Logger.getLogger(SummaryYearlyBudgetPanel.class);
 
 	private Budget budget;
 
-	private JLabel lblAnno;
+	private final JLabel lblAnno;
 
-	private JLabel lblYearValue;
+	private final JLabel lblYearValue;
 
 	private int year;
 
@@ -152,7 +152,7 @@ public class SummaryYearlyBudgetPanel extends JSplitPane implements ChangeListen
 		this.setRightComponent(panelDetails);
 		panelDetails.setLayout(new BorderLayout(0, 0));
 		this.dataset = new DefaultPieDataset();
-		this.jfc = ChartFactory.createPieChart3D("Budget Annuale", dataset, true, true, false);
+		this.jfc = ChartFactory.createPieChart("Budget Annuale", dataset, true, true, false);
 		chartPanel = new ChartPanel(jfc);
 		chartPanel.setPreferredSize(new Dimension(400, 400));
 		panelDetails.add(chartPanel);

@@ -18,7 +18,7 @@ public class ShutdownHook extends Thread
 {
 	private static final String project = "SuperBudget";
 
-	public static ThreadLocal<Boolean> restartApp = new ThreadLocal<Boolean>();
+	public static boolean restartApp = false;
 
 	public File getApplicationFileName(File dir)
 	{
@@ -68,7 +68,7 @@ public class ShutdownHook extends Thread
 		catch (SQLException e1)
 		{
 		}
-		if (restartApp.get())
+		if (restartApp)
 		{
 			try
 			{

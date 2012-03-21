@@ -18,7 +18,7 @@ public class CalendarsUtils
 	public static java.sql.Date getSqlFinishCurrentMonth()
 	{
 		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.DAY_OF_MONTH, calendar.getMaximum(Calendar.DAY_OF_MONTH));
+		calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
 		return new java.sql.Date(calendar.getTimeInMillis());
 	}
 
@@ -56,18 +56,66 @@ public class CalendarsUtils
 		return new java.sql.Date(calendar.getTimeInMillis());
 	}
 
-	public static Date getInitCurrentMonth()
+	public static Date getInitMonth(int month)
 	{
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.DAY_OF_MONTH, 1);
+		calendar.set(Calendar.MONTH, month);
 		return calendar.getTime();
+	}
+
+	public static Date getFinishMonth(int month)
+	{
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+		return calendar.getTime();
+	}
+
+	public static java.sql.Date getSqlInitMonth(int month)
+	{
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.DAY_OF_MONTH, 1);
+		calendar.set(Calendar.MONTH, month);
+		return new java.sql.Date(calendar.getTimeInMillis());
+	}
+
+	public static java.sql.Date getSqlInitMonth(int month, int year)
+	{
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.DAY_OF_MONTH, 1);
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.YEAR, year);
+		return new java.sql.Date(calendar.getTimeInMillis());
+	}
+
+	public static java.sql.Date getSqlFinishMonth(int month, int year)
+	{
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, year);
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+		return new java.sql.Date(calendar.getTimeInMillis());
+	}
+
+	public static java.sql.Date getSqlFinishMonth(int month)
+	{
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+		return new java.sql.Date(calendar.getTimeInMillis());
+	}
+
+	public static Date getInitCurrentMonth()
+	{
+		Calendar calendar = Calendar.getInstance();
+		return CalendarsUtils.getInitMonth(calendar.get(Calendar.MONTH));
 	}
 
 	public static Date getFinishCurrentMonth()
 	{
 		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.DAY_OF_MONTH, calendar.getMaximum(Calendar.DAY_OF_MONTH));
-		return calendar.getTime();
+		return CalendarsUtils.getFinishMonth(calendar.get(Calendar.MONTH));
 	}
 
 	public static Date getInitCurrentYear()
@@ -107,7 +155,7 @@ public class CalendarsUtils
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 
-	public static Object getCurrentMonthLabel(Date date)
+	public static String getCurrentMonthLabel(Date date)
 	{
 		if (date == null)
 		{
@@ -137,13 +185,6 @@ public class CalendarsUtils
 			calendar.setTime(date);
 			return calendar.get(Calendar.YEAR);
 		}
-	}
-
-	public static void main(String[] args)
-	{
-		Calendar c = Calendar.getInstance();
-		System.out.println(c.getDisplayName(Calendar.WEEK_OF_MONTH, Calendar.LONG, Locale.getDefault()));
-		System.out.println(c.getDisplayName(Calendar.WEEK_OF_YEAR, Calendar.LONG, Locale.getDefault()));
 	}
 
 	public static String getCurrentQuartelyMonthLabel()

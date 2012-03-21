@@ -295,7 +295,7 @@ public class SplashScreen extends JDialog
 											}
 										}
 									}
-									ShutdownHook.restartApp.set(true);
+									ShutdownHook.restartApp = true;
 									JOptionPane.showMessageDialog(rootPane, "Aggiornamento avvenuto l'applicazione verrà riavviata");
 									System.exit(1);
 								}

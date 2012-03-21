@@ -22,8 +22,9 @@ import javax.persistence.TemporalType;
 @NamedQueries(value =
 {
 
-@NamedQuery(name = "getBudgetIncome", query = "Select t From Income t where t.budget =:budget order by t.dateFrom"),
-		@NamedQuery(name = "getBudgetExpenses", query = "Select t From Income t where t.budget =:budget order by t.dateFrom") })
+		@NamedQuery(name = "getBudgetIncome", query = "Select t From Income t where t.budget =:budget order by t.dateFrom"),
+		@NamedQuery(name = "getBudgetExpenses", query = "Select t From Income t where t.budget =:budget order by t.dateFrom"),
+		@NamedQuery(name = "existBudgetEntry", query = "Select t From BudgetEntry t where t.budgetEntryId = :budgetEntryId and t.dateFrom = :dateFrom and t.dateTo = :dateTo and t.budget= :budget") })
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.CHAR)
